@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuhan, Ada & Harus Ada — munnnn666</title>
+<meta name="description" content="Sebuah kajian filosofis dan akademik tentang argumen keberadaan Tuhan dan mengapa manusia harus beragama. Dari nol hingga kesimpulan.">
+<meta property="og:title" content="Tuhan, Ada & Harus Ada — munnnn666">
+<meta property="og:description" content="Kajian filosofis akademik: argumen kosmologis, teleologis, moral, dan eksistensial tentang Tuhan dan agama.">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0c09;--bg2:#141209;--bg3:#1c180f;--bg4:#231f14;
+  --ink:#f0e8d8;--ink2:#d8ccb8;--muted:#8a7e6a;--dim:#4a4236;
+  --border:#2a2418;--border2:#3a3228;
+  --surface:#171410;--surface2:#1e1a12;
+  --gold:#c8902a;--gold2:#e0aa48;--gold3:#f4cc6e;--gold4:rgba(200,144,42,.12);
+  --crimson:#8b2020;--crimson2:#b03030;
+  --azure:#2a4a7a;--azure2:#3a6aaa;
+  --sage:#2a4a3a;--sage2:#3a6a4a;
+  --sb-w:288px;--nav-h:58px;
+}
+[data-theme="light"]{
+  --bg:#f5f0e8;--bg2:#ede8dc;--bg3:#e4ddd0;--bg4:#dcd4c4;
+  --ink:#1a1510;--ink2:#3a3028;--muted:#6a5e4e;--dim:#a09080;
+  --border:#d8cfc0;--border2:#c8bfac;
+  --surface:#faf6ee;--surface2:#f0eadc;
+  --gold:#9a6a10;--gold2:#b88020;--gold3:#d4a030;--gold4:rgba(154,106,16,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:2px}
+body{background:var(--bg);color:var(--ink);font-family:"Crimson Pro",Georgia,serif;line-height:1.7;overflow-x:hidden;transition:background .35s,color .35s}
+
+/* ── TEXTURE OVERLAY ── */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size:200px}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:200;
+  background:rgba(14,12,9,.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:0 20px 0 0}
+[data-theme="light"] #nav{background:rgba(245,240,232,.95)}
+.nav-brand{display:flex;align-items:center;height:var(--nav-h);padding:0 22px;
+  font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;
+  color:var(--gold2);text-decoration:none;letter-spacing:.02em;
+  border-right:1px solid var(--border);gap:12px}
+.nav-brand-sub{font-family:"Fira Code",monospace;font-size:9px;color:var(--muted);letter-spacing:.15em;font-weight:300}
+.nav-controls{display:flex;align-items:center;gap:6px}
+.nav-btn{height:32px;padding:0 11px;border-radius:3px;
+  font-family:"Fira Code",monospace;font-size:10px;font-weight:400;letter-spacing:.08em;
+  border:1px solid var(--border);background:transparent;color:var(--muted);
+  cursor:pointer;display:flex;align-items:center;gap:5px;
+  transition:color .2s,border-color .2s,background .2s}
+.nav-btn:hover{border-color:var(--gold);color:var(--gold2);background:var(--gold4)}
+#search-wrap{position:relative}
+#search-input{height:32px;width:200px;padding:0 32px 0 11px;
+  border:1px solid var(--border);border-radius:3px;
+  background:var(--surface);color:var(--ink);
+  font-family:"Crimson Pro",serif;font-size:14px;outline:none;
+  transition:border-color .2s,box-shadow .2s}
+#search-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,144,42,.12)}
+#search-input::placeholder{color:var(--dim)}
+.s-icon{position:absolute;right:9px;top:50%;transform:translateY(-50%);color:var(--dim);font-size:13px;pointer-events:none}
+#sb-toggle{display:none;width:38px;height:38px;border-radius:3px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:16px;align-items:center;justify-content:center;color:var(--muted)}
+
+/* ── SIDEBAR ── */
+#sidebar{position:fixed;top:var(--nav-h);left:0;bottom:0;width:var(--sb-w);
+  background:var(--bg2);border-right:1px solid var(--border);
+  overflow-y:auto;z-index:100;padding:28px 0;transition:transform .3s ease}
+#sidebar::-webkit-scrollbar{width:3px}
+#sidebar::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.sb-sect{margin-bottom:28px;padding:0 18px}
+.sb-lbl{font-family:"Fira Code",monospace;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--dim);margin-bottom:11px}
+.sb-prog-row{display:flex;justify-content:space-between;font-family:"Fira Code",monospace;font-size:10px;color:var(--muted);margin-bottom:7px}
+.sb-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.sb-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;transition:width .5s ease}
+.sb-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px}
+.sb-stat{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:9px 10px;text-align:center}
+.sb-stat-v{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:700;color:var(--gold2);line-height:1}
+.sb-stat-l{font-family:"Fira Code",monospace;font-size:9px;color:var(--muted);margin-top:2px}
+.ch-btn{width:100%;text-align:left;padding:9px 11px;border-radius:3px;border:none;background:none;cursor:pointer;
+  font-family:"Crimson Pro",serif;font-size:13px;color:var(--ink2);
+  transition:background .2s,color .2s;margin-bottom:2px;
+  display:flex;align-items:center;gap:9px}
+.ch-btn:hover{background:var(--bg3);color:var(--ink)}
+.ch-btn.active{background:var(--gold);color:#0e0c09}
+.ch-btn .ch-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ch-btn .ch-n{margin-left:auto;font-family:"Fira Code",monospace;font-size:9px;opacity:.45}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:5px}
+.tag-btn{font-family:"Fira Code",monospace;font-size:10px;padding:3px 9px;border-radius:20px;
+  border:1px solid var(--border);background:none;cursor:pointer;color:var(--muted);transition:all .2s}
+.tag-btn:hover{border-color:var(--gold);color:var(--gold2)}
+.tag-btn.active{background:var(--gold);color:#0e0c09;border-color:var(--gold)}
+
+/* ── MAIN ── */
+#main{margin-left:var(--sb-w);padding-top:var(--nav-h);min-height:100vh;position:relative;z-index:1}
+
+/* ── HERO ── */
+#hero{padding:80px 56px 56px;max-width:800px;position:relative}
+#hero::after{content:"Tuhan";position:absolute;right:-20px;top:40px;
+  font-family:"Cormorant Garamond",serif;font-size:200px;font-weight:700;
+  color:var(--border);line-height:1;pointer-events:none;white-space:nowrap;overflow:hidden;max-width:60%}
+.hero-tag{font-family:"Fira Code",monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-tag::before{content:"";display:block;width:28px;height:1px;background:var(--gold)}
+.hero-title{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,6vw,80px);font-weight:700;
+  line-height:1.05;letter-spacing:-.02em;margin-bottom:8px;color:var(--ink)}
+.hero-title em{font-style:italic;color:var(--gold2)}
+.hero-subtitle{font-family:"Cormorant Garamond",serif;font-size:clamp(18px,2.5vw,26px);
+  font-weight:400;font-style:italic;color:var(--muted);margin-bottom:32px;line-height:1.4}
+.hero-desc{font-size:17px;color:var(--ink2);line-height:1.85;max-width:560px;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap}
+.hstat-n{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:700;color:var(--gold2);line-height:1}
+.hstat-l{font-family:"Fira Code",monospace;font-size:9px;color:var(--dim);margin-top:4px;letter-spacing:.1em}
+
+/* ── PENGANTAR ── */
+#pengantar{max-width:680px;margin:0 56px 56px;padding:36px 40px;
+  border-left:2px solid var(--gold);background:var(--surface);border-radius:0 4px 4px 0;
+  position:relative}
+#pengantar::before{content:'"';position:absolute;top:-16px;left:28px;
+  font-family:"Cormorant Garamond",serif;font-size:80px;color:var(--gold);opacity:.3;line-height:1}
+.peng-lbl{font-family:"Fira Code",monospace;font-size:8px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px}
+.peng-body{font-family:"Crimson Pro",serif;font-size:16px;line-height:2;color:var(--ink2)}
+.peng-body p{margin-bottom:14px}
+.peng-body p:last-child{margin-bottom:0}
+.peng-sign{font-family:"Fira Code",monospace;font-size:11px;color:var(--gold);margin-top:18px}
+
+/* ── CHAPTER HEADER ── */
+.ch-hdr{padding:48px 56px 24px;border-top:1px solid var(--border);position:relative;overflow:hidden}
+.ch-hdr::before{content:attr(data-num);position:absolute;right:40px;top:-24px;
+  font-family:"Cormorant Garamond",serif;font-size:160px;font-weight:700;
+  color:var(--border);line-height:1;pointer-events:none}
+.ch-eyebrow{font-family:"Fira Code",monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px}
+.ch-name{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,3vw,38px);font-weight:700;margin-bottom:8px;line-height:1.15}
+.ch-tagline{font-family:"Crimson Pro",serif;font-size:15px;font-style:italic;color:var(--muted);max-width:520px;line-height:1.7}
+
+/* ── CARDS GRID ── */
+.cards-grid{padding:0 40px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:4px;
+  padding:26px;cursor:pointer;position:relative;overflow:hidden;
+  border-top:2px solid var(--ch-color,var(--gold));
+  transition:box-shadow .25s,transform .25s,border-color .2s}
+.card:hover{box-shadow:0 10px 40px rgba(0,0,0,.35);transform:translateY(-3px)}
+.card.read::after{content:"✓ Dibaca";position:absolute;top:11px;right:11px;
+  font-family:"Fira Code",monospace;font-size:9px;color:var(--sage2);
+  background:rgba(42,74,58,.15);padding:2px 8px;border-radius:10px}
+.card-argtype{font-family:"Fira Code",monospace;font-size:9px;letter-spacing:.18em;
+  color:var(--ch-color,var(--gold));margin-bottom:9px;opacity:.75}
+.card-title{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;
+  margin-bottom:10px;line-height:1.25;color:var(--ink)}
+.card-preview{font-family:"Crimson Pro",serif;font-size:13.5px;color:var(--muted);line-height:1.75;
+  margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card-footer{display:flex;align-items:center;justify-content:space-between}
+.card-tag{font-family:"Fira Code",monospace;font-size:9px;padding:3px 9px;
+  border-radius:20px;border:1px solid var(--border);color:var(--muted)}
+.card-acts{display:flex;gap:5px}
+.ci-btn{width:27px;height:27px;border-radius:3px;border:1px solid var(--border);
+  background:none;cursor:pointer;font-size:12px;display:flex;align-items:center;
+  justify-content:center;color:var(--muted);transition:all .2s}
+.ci-btn:hover{border-color:var(--gold);color:var(--gold2)}
+.ci-btn.bm-on{background:var(--gold4);border-color:var(--gold);color:var(--gold2)}
+
+/* ── MODAL ── */
+#mo{position:fixed;inset:0;z-index:500;background:rgba(8,6,4,.8);backdrop-filter:blur(8px);
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  display:flex;align-items:center;justify-content:center;padding:24px}
+#mo.open{opacity:1;pointer-events:all}
+#md{background:var(--surface2);border-radius:4px;width:100%;max-width:660px;max-height:90vh;
+  overflow-y:auto;border-top:3px solid var(--modal-color,var(--gold));
+  box-shadow:0 32px 100px rgba(0,0,0,.5);transform:translateY(20px);transition:transform .3s}
+#mo.open #md{transform:translateY(0)}
+#md::-webkit-scrollbar{width:3px}
+#md::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.md-hdr{padding:32px 32px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.md-num{font-family:"Fira Code",monospace;font-size:10px;letter-spacing:.18em;
+  color:var(--modal-color,var(--gold));margin-bottom:10px}
+.md-title{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;line-height:1.2;color:var(--ink)}
+.md-close{width:34px;height:34px;border-radius:3px;border:1px solid var(--border);
+  background:none;cursor:pointer;font-size:16px;color:var(--muted);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:all .2s}
+.md-close:hover{border-color:var(--crimson2);color:var(--crimson2)}
+.md-body{padding:22px 32px 32px;font-family:"Crimson Pro",serif;font-size:16px;line-height:2;color:var(--ink2)}
+.md-body p{margin-bottom:16px}
+.md-body p:last-child{margin-bottom:0}
+.md-body strong{color:var(--ink);font-weight:600}
+.md-body em{font-style:italic;color:var(--ink2)}
+.md-divider{width:40px;height:1px;background:var(--gold);margin:20px 0;opacity:.4}
+.md-insight{margin-top:22px;padding:20px 22px;border-left:2px solid var(--modal-color,var(--gold));
+  background:var(--bg3);border-radius:0 3px 3px 0;
+  font-family:"Crimson Pro",serif;font-size:15px;font-style:italic;color:var(--muted);line-height:1.85}
+.md-insight cite{display:block;margin-top:8px;font-family:"Fira Code",monospace;
+  font-size:10px;font-style:normal;color:var(--dim);letter-spacing:.05em}
+.md-foot{padding:16px 32px;border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.md-tag{font-family:"Fira Code",monospace;font-size:10px;padding:4px 11px;
+  border-radius:20px;border:1px solid var(--border);color:var(--muted)}
+.md-nav{display:flex;gap:7px}
+.md-nav-btn{height:32px;padding:0 14px;border-radius:3px;border:1px solid var(--border);
+  background:var(--bg3);cursor:pointer;font-family:"Fira Code",monospace;font-size:10px;
+  color:var(--muted);transition:all .2s}
+.md-nav-btn:hover{border-color:var(--gold);color:var(--gold2)}
+.md-nav-btn:disabled{opacity:.25;cursor:default}
+.md-acts{display:flex;gap:7px}
+.md-act-btn{height:32px;padding:0 13px;border-radius:3px;border:1px solid var(--border);
+  background:none;cursor:pointer;font-family:"Fira Code",monospace;font-size:10px;
+  color:var(--muted);transition:all .2s}
+.md-act-btn:hover{border-color:var(--gold);color:var(--gold2)}
+.md-act-btn.active{background:var(--gold);color:#0e0c09;border-color:var(--gold)}
+
+/* ── PENUTUP ── */
+#penutup{border-top:1px solid var(--border);padding:72px 56px 0;max-width:720px}
+.p-eyebrow{font-family:"Fira Code",monospace;font-size:8px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.p-title{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,4vw,44px);font-weight:700;line-height:1.15;margin-bottom:26px;color:var(--ink)}
+.p-body{font-family:"Crimson Pro",serif;font-size:16px;line-height:2;color:var(--muted)}
+.p-body p{margin-bottom:14px}
+.p-box{background:var(--surface);border:1px solid var(--border);border-radius:4px;
+  padding:30px;margin:32px 0;position:relative;overflow:hidden}
+.p-box::after{content:"ﷲ";position:absolute;right:-5px;bottom:-30px;
+  font-size:140px;color:var(--border);line-height:1;pointer-events:none;opacity:.4}
+.p-box-title{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;margin-bottom:6px;color:var(--ink)}
+.p-box-sub{font-family:"Fira Code",monospace;font-size:10px;color:var(--muted);margin-bottom:20px;letter-spacing:.05em}
+.p-step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.p-badge{font-family:"Fira Code",monospace;font-size:8px;color:var(--gold);
+  background:rgba(200,144,42,.1);border:1px solid rgba(200,144,42,.25);
+  padding:3px 8px;border-radius:2px;flex-shrink:0;margin-top:3px;white-space:nowrap}
+.p-step-text{font-family:"Crimson Pro",serif;font-size:14px;color:var(--muted);line-height:1.75}
+.author-blk{display:flex;align-items:center;gap:20px;padding:24px;
+  background:var(--bg2);border-radius:3px;border-left:2px solid var(--gold);flex-wrap:wrap}
+.author-av{width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),#6a3008);
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;color:#fff;flex-shrink:0}
+.author-nm{font-family:"Fira Code",monospace;font-size:13px;color:var(--gold2)}
+.author-rl{font-family:"Crimson Pro",serif;font-size:12px;color:var(--dim);margin-top:2px}
+.author-q{margin-left:auto;font-family:"Crimson Pro",serif;font-size:12px;
+  font-style:italic;color:var(--dim);max-width:220px;text-align:right;line-height:1.6}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:48px 40px;border-top:1px solid var(--border);
+  background:var(--bg2);margin-top:64px}
+.ft-title{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:700;color:var(--gold2);margin-bottom:5px}
+.ft-by{font-family:"Fira Code",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em;margin-bottom:20px}
+.ft-legal{font-family:"Fira Code",monospace;font-size:10px;color:var(--dim);line-height:2;max-width:440px;margin:0 auto}
+
+/* ── FAB ── */
+#fab{position:fixed;bottom:26px;right:26px;z-index:300;width:50px;height:50px;border-radius:50%;
+  background:var(--gold);color:#0e0c09;border:none;font-size:20px;cursor:pointer;
+  box-shadow:0 4px 24px rgba(200,144,42,.45);display:flex;align-items:center;justify-content:center;
+  transition:transform .25s,box-shadow .25s}
+#fab:hover{transform:scale(1.12) rotate(18deg);box-shadow:0 8px 32px rgba(200,144,42,.55)}
+
+/* ── RESET MODAL ── */
+#reset-modal{display:none;position:fixed;inset:0;z-index:600;
+  background:rgba(8,6,4,.8);backdrop-filter:blur(8px);
+  align-items:center;justify-content:center;padding:24px}
+.reset-box{background:var(--surface2);border-radius:4px;padding:36px;max-width:380px;width:100%;
+  border-top:3px solid var(--crimson2)}
+.reset-box h3{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:700;
+  margin-bottom:8px;color:var(--ink)}
+.reset-box p{font-family:"Crimson Pro",serif;font-size:14px;color:var(--muted);
+  line-height:1.7;margin-bottom:24px}
+.reset-btns{display:flex;gap:10px;justify-content:flex-end}
+.btn-danger{height:34px;padding:0 16px;border-radius:3px;border:none;
+  background:var(--crimson2);color:#fff;cursor:pointer;
+  font-family:"Fira Code",monospace;font-size:10px;letter-spacing:.06em;font-weight:500}
+
+/* ── EMPTY ── */
+#empty{display:none;text-align:center;padding:80px 40px;color:var(--muted)}
+#empty .e-ico{font-size:44px;margin-bottom:16px}
+#empty h3{font-family:"Cormorant Garamond",serif;font-size:24px;margin-bottom:8px;color:var(--ink)}
+#empty p{font-family:"Crimson Pro",serif;font-size:15px}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.up{opacity:1;transform:translateY(0)}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:88px;right:26px;z-index:400;
+  background:var(--ink);color:var(--bg);
+  font-family:"Fira Code",monospace;font-size:11px;
+  padding:10px 16px;border-radius:3px;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .25s,transform .25s;pointer-events:none}
+#toast.show{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  #sidebar{transform:translateX(-100%)}
+  #sidebar.open{transform:translateX(0)}
+  #main{margin-left:0}
+  #sb-toggle{display:flex}
+  #hero{padding:40px 20px 32px}
+  #hero::after{display:none}
+  #pengantar{margin:0 20px 32px;padding:24px}
+  .ch-hdr{padding:32px 20px 16px}
+  .cards-grid{padding:0 16px 56px;grid-template-columns:1fr}
+  #penutup{padding:48px 20px 0}
+  footer{padding:32px 20px}
+  #search-input{width:130px}
+}
+
+/* ── FONT SIZE FIX: use CSS variables that scale with html font-size ── */
+:root { --fz: 1rem; }
+.peng-body { font-size: var(--fz) !important; }
+.hero-desc  { font-size: calc(var(--fz) * 1.06) !important; }
+.card-title { font-size: calc(var(--fz) * 1.25) !important; }
+.card-preview { font-size: calc(var(--fz) * 0.9) !important; }
+.md-body    { font-size: var(--fz) !important; }
+.md-title   { font-size: calc(var(--fz) * 1.75) !important; }
+.md-insight { font-size: calc(var(--fz) * 0.97) !important; }
+.p-body     { font-size: var(--fz) !important; }
+.p-step-text { font-size: calc(var(--fz) * 0.9) !important; }
+.ch-tagline  { font-size: calc(var(--fz) * 0.97) !important; }
+
+/* Active font button */
+.fs-btn.active-fs { color: var(--gold2) !important; background: var(--gold4) !important; }
+.fs-btn:hover { color: var(--gold2); background: var(--gold4); }
+
+</style>
+</head>
+<body>
+<div id="prog-bar" style="position:fixed;top:0;left:0;right:0;height:2px;z-index:9999;background:linear-gradient(90deg,var(--gold),var(--gold2));transform-origin:left;transform:scaleX(0);transition:transform .1s linear;pointer-events:none"></div>
+<nav id="nav">
+  <a class="nav-brand" href="#">Tuhan, Ada &amp; Harus Ada<span class="nav-brand-sub">munnnn666</span></a>
+  <div class="nav-controls">
+    <button id="sb-toggle" onclick="toggleSB()" aria-label="Toggle navigasi" aria-expanded="false">☰</button>
+    <div id="search-wrap">
+      <input id="search-input" type="text" placeholder="Cari argumen..." oninput="onSearch(this.value)" aria-label="Cari">
+      <span class="s-icon">⌕</span>
+    </div>
+    <button class="nav-btn" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle tema">☀</button>
+    <div style="display:flex;gap:2px;align-items:center;border:1px solid var(--border);border-radius:3px;overflow:hidden"><button class="nav-btn fs-btn" id="fs-sm" onclick="setFont('sm')" title="Teks Kecil" style="border:none;padding:0 8px;height:32px;border-radius:0;letter-spacing:0;font-size:11px">A−</button><button class="nav-btn fs-btn active-fs" id="fs-md" onclick="setFont('md')" title="Teks Normal" style="border:none;border-left:1px solid var(--border);border-right:1px solid var(--border);padding:0 8px;height:32px;border-radius:0;letter-spacing:0;font-size:13px">A</button><button class="nav-btn fs-btn" id="fs-lg" onclick="setFont('lg')" title="Teks Besar" style="border:none;padding:0 8px;height:32px;border-radius:0;letter-spacing:0;font-size:15px">A+</button></div>
+    <button class="nav-btn" id="bm-btn" onclick="filterBM()" aria-label="Filter bookmark" aria-pressed="false">🔖</button>
+    <button class="nav-btn" onclick="openRandom()" aria-label="Argumen acak">🎲 Acak</button>
+    <button class="nav-btn" onclick="confirmReset()" aria-label="Reset progres" title="Reset progres">↺</button>
+  </div>
+</nav>
+
+<div id="sidebar">
+  <div class="sb-sect">
+    <div class="sb-lbl">Progres</div>
+    <div class="sb-prog-row"><span id="sb-rc">0 / 42</span><span id="sb-pct">0%</span></div>
+    <div class="sb-bar"><div class="sb-fill" id="sb-fill" style="width:0%"></div></div>
+    <div class="sb-stats">
+      <div class="sb-stat"><div class="sb-stat-v" id="sb-tr">0</div><div class="sb-stat-l">Dibaca</div></div>
+      <div class="sb-stat"><div class="sb-stat-v" id="sb-bmc">0</div><div class="sb-stat-l">Bookmark</div></div>
+    </div>
+  </div>
+  <div class="sb-sect"><div class="sb-lbl">Bab</div><div id="sb-chs"></div></div>
+  <div class="sb-sect"><div class="sb-lbl">Topik</div><div class="tag-cloud" id="sb-tags"></div></div>
+</div>
+
+<div id="main">
+  <div id="hero">
+    <div class="hero-tag">Kajian Filosofis & Akademik · 2026</div>
+    <h1 class="hero-title">Tuhan,<br><em>Ada &amp; Harus Ada</em></h1>
+    <div class="hero-subtitle">Mengapa Tuhan Eksis dan Mengapa Manusia Harus Beragama</div>
+    <p class="hero-desc">Dari kekosongan total — tanpa asumsi, tanpa dogma — buku ini membangun argumen secara bertahap menggunakan logika, kosmologi, fisika, neurosains, dan filsafat moral. Bukan untuk memaksa kesimpulan, melainkan untuk menunjukkan bahwa kesimpulan itu <em>tidak terelakkan</em> bagi pikiran yang benar-benar jujur.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">42</div><div class="hstat-l">Argumen</div></div>
+      <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">Bab</div></div>
+      <div class="hstat"><div class="hstat-n">0</div><div class="hstat-l">Dogma</div></div>
+    </div>
+  </div>
+
+  <div id="pengantar">
+    <div class="peng-lbl">Kata Pengantar</div>
+    <div class="peng-body">
+      <p>Buku ini tidak dimulai dengan keyakinan. Ia dimulai dari satu-satunya tempat yang adil untuk memulai: <strong>tidak tahu apa-apa</strong>. Tidak ada asumsi bahwa Tuhan ada. Tidak ada asumsi bahwa Tuhan tidak ada. Hanya satu pertanyaan yang dibawa sejak halaman pertama: <em>apa yang bisa kita ketahui, dan bagaimana kita mengetahuinya?</em></p>
+      <p>Yang akan kamu temukan bukan bukti dalam pengertian matematis — tidak ada bukti seperti itu untuk pertanyaan sebesar ini di kedua arah. Yang akan kamu temukan adalah kumulasi argumen yang, jika diperiksa dengan jujur, membuat posisi teistik jauh lebih masuk akal secara rasional daripada yang sering diasumsikan. Dan lebih dari itu: bahwa agama bukan hanya respons emosional primitif, melainkan kebutuhan yang tertanam dalam struktur terdalam kemanusiaan.</p>
+      <p>Baca ini bukan untuk setuju. Baca ini untuk berpikir. Kesimpulan yang kamu capai sendiri selalu lebih kuat dari kesimpulan yang diberikan orang lain.</p>
+    </div>
+    <div class="peng-sign">— munnnn666, Penulis & Kurator</div>
+  </div>
+
+  <div id="content-area"></div>
+  <div id="empty"><div class="e-ico">∅</div><h3>Tidak ditemukan</h3><p>Coba kata kunci yang berbeda.</p><br><button class="nav-btn" style="margin:0 auto" onclick="resetFilter()">Reset filter</button></div>
+
+  <div id="penutup">
+    <div class="p-eyebrow">Sintesis Akhir</div>
+    <h2 class="p-title">Dari Nol ke Kesimpulan yang Tidak Bisa Dihindari</h2>
+    <div class="p-body">
+      <p>Kamu telah melewati 42 argumen. Dari pertanyaan paling dasar — mengapa ada sesuatu daripada tidak ada — hingga argumen moral, neurosains agama, fungsi eksistensial kepercayaan, dan menghadapi keberatan paling keras dari pihak penentang.</p>
+      <p>Tidak ada satu argumen yang berdiri sendiri sebagai bukti konklusif. Tapi begitulah cara kerja <strong>argumen kumulatif</strong> — seperti tali yang dijalin dari banyak serat. Tidak ada satu serat yang cukup kuat, tapi bersama-sama mereka membentuk sesuatu yang tidak mudah diputus.</p>
+      <p>Pertanyaan yang tersisa bukan "apakah Tuhan ada?" — melainkan: <em>apa yang akan kamu lakukan dengan jawaban yang sudah mendekat?</em></p>
+    </div>
+    <div class="p-box">
+      <div class="p-box-title">Pertanyaan untuk Dilanjutkan</div>
+      <div class="p-box-sub">Bukan akhir — ini adalah awal dari perjalanan yang lebih dalam</div>
+      <div class="p-step"><span class="p-badge">LANGKAH 1</span><div class="p-step-text">Kembali ke argumen yang paling mengguncangmu. Bukan yang paling meyakinkan — yang paling membuat <em>tidak nyaman</em>. Di situlah letak pintu yang penting.</div></div>
+      <div class="p-step"><span class="p-badge">LANGKAH 2</span><div class="p-step-text">Baca satu teks primer dari pemikir yang kamu temukan dalam buku ini: Aquinas, Kant, Leibniz, Plantinga, atau James. Bukan ringkasan orang lain — sumber aslinya.</div></div>
+      <div class="p-step"><span class="p-badge">LANGKAH 3</span><div class="p-step-text">Temukan seseorang yang berseberangan denganmu secara intelektual dan berdiskusi secara serius. Bukan untuk mengalahkan — untuk memahami di mana argumenmu benar-benar berdiri.</div></div>
+      <div class="p-step"><span class="p-badge">LANGKAH 4</span><div class="p-step-text">Gunakan 🎲 Acak tiga kali. Baca ulang apa yang muncul dengan perspektif setelah menyelesaikan semua 42 argumen. Pemahaman yang berubah adalah tanda bahwa sesuatu sedang bekerja.</div></div>
+    </div>
+    <div class="author-blk">
+      <div class="author-av">M</div>
+      <div><div class="author-nm">munnnn666</div><div class="author-rl">Penulis & Kurator · Tuhan, Ada & Harus Ada</div></div>
+      <div class="author-q">"Pertanyaan tentang Tuhan bukan pertanyaan yang bisa dihindari — hanya bisa ditunda. Dan menundanya pun adalah sebuah jawaban."</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="ft-title">Tuhan, Ada &amp; Harus Ada</div>
+    <div class="ft-by">Kajian Filosofis & Akademik · munnnn666 · 2026</div>
+    <div class="ft-legal">Untuk penggunaan pribadi dan pengembangan intelektual.<br>Dilarang disebarluaskan tanpa izin penulis.</div>
+  </footer>
+</div>
+
+<div id="mo" onclick="closeMOBg(event)" role="dialog" aria-modal="true" aria-labelledby="md-title">
+  <div id="md">
+    <div class="md-hdr">
+      <div><div class="md-num" id="md-num"></div><div class="md-title" id="md-title"></div></div>
+      <button class="md-close" onclick="closeMO()" aria-label="Tutup">✕</button>
+    </div>
+    <div class="md-body" id="md-body"></div>
+    <div class="md-foot">
+      <span class="md-tag" id="md-tag"></span>
+      <div class="md-acts">
+        <button class="md-act-btn" id="md-bm" onclick="toggleMdBM()">☆ Simpan</button>
+        <button class="md-act-btn" onclick="shareItem()">⎘ Salin</button>
+      </div>
+      <div class="md-nav">
+        <button class="md-nav-btn" id="md-prev" onclick="navMO(-1)">← Prev</button>
+        <button class="md-nav-btn" id="md-next" onclick="navMO(1)">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="fab-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas" style="position:fixed;bottom:88px;right:26px;z-index:300;width:40px;height:40px;border-radius:50%;background:var(--surface2);color:var(--gold2);border:1px solid var(--border);font-size:16px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none;display:flex;align-items:center;justify-content:center">↑</button>
+<button id="fab" onclick="openRandom()" aria-label="Argumen acak">🎲</button>
+
+<div id="reset-modal" role="dialog" aria-modal="true">
+  <div class="reset-box">
+    <h3>Reset Semua Progres?</h3>
+    <p>Seluruh data membaca dan bookmark akan dihapus secara permanen. Tindakan ini tidak bisa dibatalkan.</p>
+    <div class="reset-btns">
+      <button class="nav-btn" onclick="document.getElementById('reset-modal').style.display='none'">Batal</button>
+      <button class="btn-danger" onclick="doReset()">Reset Semua</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+'use strict';
+const CHAPTERS=[
+  {id:1,label:'Titik Nol',           emoji:'∅', color:'#8a8070',from:1, to:5,  tagline:'Mengapa ada sesuatu daripada tidak ada sama sekali?'},
+  {id:2,label:'Kosmologi',           emoji:'🌌',color:'#2a4a7a',from:6, to:11, tagline:'Alam semesta tidak bisa menciptakan dirinya sendiri'},
+  {id:3,label:'Teleologi & Desain',  emoji:'⚙️',color:'#2a5a3a',from:12,to:17, tagline:'Keteraturan yang terlalu presisi untuk kebetulan'},
+  {id:4,label:'Moralitas & Nilai',   emoji:'⚖️',color:'#6a3a1a',from:18,to:22, tagline:'Dari mana datangnya rasa bahwa ada yang benar dan yang salah?'},
+  {id:5,label:'Manusia & Eksistensi',emoji:'👁️',color:'#4a2a6a',from:23,to:27, tagline:'Ada pertanyaan yang tidak dijawab oleh atom-atom'},
+  {id:6,label:'Agama & Kemanusiaan', emoji:'🕌',color:'#6a4a10',from:28,to:33, tagline:'Mengapa agama ada di setiap peradaban yang pernah hidup?'},
+  {id:7,label:'Keberatan & Jawaban', emoji:'⚔️',color:'#6a1a1a',from:34,to:38, tagline:'Membedah argumen terkuat penolak — secara jujur'},
+  {id:8,label:'Sintesis',            emoji:'◈',  color:'#c8902a',from:39,to:42, tagline:'Dari pertanyaan pertama hingga kesimpulan yang bisa dipertahankan'},
+];
+
+const KD=[
+// ══ BAB 1: TITIK NOL ══
+{id:1,ch:1,title:'Mengapa Ada Sesuatu Daripada Tidak Ada?',tag:'ontologi',
+body:`Pertanyaan ini bukan retorika. Ia adalah pertanyaan paling dalam yang bisa diajukan pikiran manusia, dan ia adalah pertanyaan yang secara resmi tidak terjawab oleh sains arus utama. Gottfried Wilhelm Leibniz, filsuf-matematikawan abad ke-17, merumuskannya secara tepat: **"Pourquoi il y a quelque chose plutôt que rien?"** — dan tidak ada yang berhasil menjawabnya sepenuhnya sejak saat itu.
+
+Sains bisa menjelaskan bagaimana sesuatu berkembang dari sesuatu yang lain. Fisika menjelaskan bagaimana materi berperilaku. Kosmologi menjelaskan bagaimana alam semesta berkembang. Tapi tidak ada kerangka ilmiah yang menjelaskan mengapa **ada** sesuatu untuk dijelaskan sejak awal. Ini bukan celah sementara yang menunggu penemuan berikutnya — ini adalah batas struktural dari penjelasan kausal.
+
+Perhatikan ini dengan cermat: setiap penjelasan yang mencoba menjawab pertanyaan ini dengan merujuk pada sesuatu yang lain hanya memindahkan pertanyaan, bukan menjawabnya. "Alam semesta muncul dari fluktuasi kuantum" — tapi mengapa ada fluktuasi kuantum? Mengapa ada hukum kuantum? Mengapa ada *apa pun* yang memungkinkan fluktuasi terjadi? Setiap langkah mundur dalam rantai kausal akhirnya membutuhkan satu entitas yang **ada dengan sendirinya** — yang tidak membutuhkan penyebab di luar dirinya. Filsafat menyebutnya *Necessary Being*: wujud yang keberadaannya adalah sifat esensialnya sendiri.`,
+insight:`"Pertanyaan mengapa ada sesuatu daripada tidak ada adalah satu-satunya pertanyaan yang tidak bisa dijawab oleh alam semesta itu sendiri — karena jawaban itu harus berasal dari luar alam semesta."`,
+cite:`— Leibniz, diadaptasi`},
+
+{id:2,ch:1,title:'Prinsip Kausalitas: Tidak Ada yang Muncul dari Kekosongan',tag:'metafisika',
+body:`**Ex nihilo nihil fit** — dari ketidakadaan, tidak ada yang bisa muncul. Prinsip ini sudah dirumuskan oleh Parmenides (abad ke-5 SM) dan menjadi fondasi logika serta sains sejak saat itu. Bukan hanya intuisi filosofis — fisika modern mengkonfirmasinya dalam setiap eksperimen: sesuatu selalu muncul dari sesuatu, energi tidak diciptakan dari nol, hanya diubah.
+
+Beberapa fisikawan modern menyatakan bahwa mekanika kuantum memungkinkan partikel muncul "dari ketiadaan" (*quantum fluctuations*). Tapi ini adalah kesalahpahaman terminologis yang sering diabaikan: *vacuum* kuantum **bukan** ketiadaan. Ia adalah kondisi fisik yang konkret — medan kuantum dengan energi nol titik yang terukur, dengan struktur, dengan potensi. Itu bukan "tidak ada"; itu adalah sesuatu yang sangat spesifik.
+
+**Lawrence Krauss** dalam "A Universe from Nothing" (2012) menulis buku yang judulnya mengklaim menjelaskan ini, tapi **David Albert**, fisikawan dan filsuf dari Columbia, mengkritiknya secara telak: Krauss hanya menjelaskan bagaimana sesuatu muncul dari *jenis sesuatu yang berbeda* — bukan dari ketiadaan yang sesungguhnya. Keberangkatan dari prinsip kausalitas tidak pernah berhasil didemonstrasikan, tidak dalam teori, tidak dalam eksperimen.`,
+insight:`"Sains yang jujur mengakui batasnya sendiri. Dan di batas itulah pertanyaan filosofis tentang Wujud yang tak berkesebaban berdiri — bukan sebagai pelarian dari nalar, tapi sebagai tuntutan nalar itu sendiri."`,
+cite:`— David Albert, "On the Origin of Everything", NYT 2012`},
+
+{id:3,ch:1,title:'Wujud Niscaya vs. Wujud Kontingen',tag:'metafisika',
+body:`Filsafat membedakan dua jenis wujud. **Wujud kontingen** (*contingent being*): wujud yang keberadaannya bergantung pada sesuatu yang lain — bisa ada, bisa tidak. Kamu adalah wujud kontingen. Bumi adalah wujud kontingen. Alam semesta ini, sebagaimana dipahami kosmologi modern, adalah wujud kontingen — ia bisa saja tidak ada.
+
+**Wujud niscaya** (*necessary being*): wujud yang keberadaannya adalah niscaya — tidak mungkin tidak ada. Ketidakberadaannya adalah kontradiksi logis. Angka matematika seperti ini: 2+2=4 tidak bisa "tidak ada" di dunia mana pun yang mematuhi logika dasar.
+
+**Argumen Leibniz**: jika semua wujud kontingen, maka tidak ada penjelasan yang memadai mengapa ada wujud sama sekali. Rantai panjang wujud kontingen yang saling menyebabkan tidak menyelesaikan masalah — karena seluruh rantai itu sendiri membutuhkan penjelasan. **Modal argumen** dari Alvin Plantinga (1974) memformalkan ini lebih jauh: jika Wujud Maha Sempurna (*Maximally Great Being*) **mungkin ada** di minimal satu dunia yang mungkin (*possible world*), maka ia harus ada di semua dunia yang mungkin — termasuk yang aktual ini. Premis kuncinya — dan satu-satunya yang bisa diperdebatkan — adalah apakah Wujud seperti itu *mungkin* ada secara konseptual. Dan kebanyakan logikawan tidak menemukan kontradiksi dalam konsep itu.`,
+insight:`"Jika kamu menerima bahwa sesuatu yang niscaya mungkin ada — dan tidak ada yang menunjukkan itu kontradiksi — maka logika sendiri yang mengantarmu ke kesimpulan selanjutnya."`,
+cite:`— Alvin Plantinga, "The Nature of Necessity", 1974`},
+
+{id:4,ch:1,title:'Prinsip Alasan yang Cukup: Segala Sesuatu Punya Penjelasan',tag:'metafisika',
+body:`**Prinsip Alasan yang Cukup** (*Principle of Sufficient Reason* — PSR) menyatakan: untuk setiap fakta yang ada, ada penjelasan yang cukup mengapa fakta itu ada dan bukan sesuatu yang lain. Leibniz menjadikan ini sebagai salah satu fondasi metafisikanya. **Christian Wolff** dan **Immanuel Kant** juga bergulat dengannya.
+
+PSR bukan hanya intuisi — ia adalah asumsi yang dioperasikan oleh sains setiap hari. Ketika fisikawan mencari "teori segalanya", mereka sedang bertindak berdasarkan PSR: asumsi bahwa ada penjelasan yang cukup mengapa alam semesta memiliki hukum-hukum yang ia miliki, bukan hukum yang lain.
+
+Masalah muncul ketika PSR diterapkan pada **eksistensi alam semesta itu sendiri** sebagai sebuah totalitas. Jika PSR benar, maka ada penjelasan cukup mengapa ada alam semesta. Tapi penjelasan itu tidak bisa berasal dari dalam alam semesta — itu sirkuler. Ia harus berasal dari sesuatu yang **melampaui** alam semesta: sesuatu yang ada secara niscaya, yang menjelaskan dirinya sendiri. **Alexander Pruss** (2006) dan **Robert Koons** telah mengembangkan versi kontemporer yang secara logis ketat, merespons keberatan standar dari Hume dan Kant.`,
+insight:`"Sains beroperasi atas asumsi bahwa ada penjelasan. Filsafat mempertanyakan: siapa yang memberikan penjelasan untuk asumsi itu sendiri?"`,
+cite:`— Alexander Pruss, "The Principle of Sufficient Reason", 2006`},
+
+{id:5,ch:1,title:'Kesalahan Komposisi dan Batas Sains',tag:'epistemologi',
+body:`Salah satu keberatan paling populer terhadap argumen kosmologis adalah **kesalahan komposisi** (*fallacy of composition*): mengasumsikan bahwa properti bagian-bagian berlaku untuk keseluruhannya. "Setiap hal di alam semesta memiliki sebab — tapi tidak berarti alam semesta sendiri memiliki sebab." Ini adalah keberatan yang serius dari **Bertrand Russell** dalam debatnya dengan **Frederick Copleston** (1948).
+
+Tapi perhatikan: ini adalah pedang bermata dua. Jika argumen ini valid, ia juga menghancurkan banyak penjelasan ilmiah yang menggeneralisasi dari bagian ke keseluruhan. Dan yang lebih penting — bahkan jika kita menerima keberatan Russell, pertanyaan Leibniz tetap berdiri: mengapa ada alam semesta dengan sifat-sifat *ini*, bukan yang lain, atau tidak ada sama sekali?
+
+**Batas sains perlu diakui secara jujur**: sains adalah metodologi untuk memahami *hubungan* antar fenomena dalam alam semesta. Ia tidak dirancang — dan tidak pernah diklaim dirancang — untuk menjawab pertanyaan tentang mengapa alam semesta ada. **Stephen Hawking** dalam "The Grand Design" (2010) menyatakan fisika bisa menggantikan filsafat, tapi **filsuf John Lennox** menunjukkan bahwa Hawking menggunakan asumsi filosofis untuk membuat klaim tersebut — ia tidak keluar dari filsafat, ia hanya berfilsafat dengan buruk.`,
+insight:`"Ketika seorang ilmuwan mengatakan 'tidak perlu Tuhan', ia mungkin sedang membuat pernyataan ilmiah. Atau ia mungkin sedang membuat pernyataan metafisik tanpa menyadarinya."`,
+cite:`— John Lennox, "God and Stephen Hawking", 2011`},
+
+// ══ BAB 2: KOSMOLOGI ══
+{id:6,ch:2,title:'Argumen Kosmologis Kalam',tag:'kosmologi',
+body:`**Argumen Kalam** adalah argumen kosmologis yang dikembangkan oleh **Al-Ghazali** (abad ke-11) dan dipopulerkan kembali secara filosofis oleh **William Lane Craig** dalam era modern. Strukturnya deceptively sederhana:
+
+**(1)** Segala sesuatu yang mulai ada memiliki sebab. **(2)** Alam semesta mulai ada. **(3)** Oleh karena itu, alam semesta memiliki sebab.
+
+Premis 1 adalah prinsip kausalitas yang telah dibahas. Yang paling menarik secara ilmiah adalah **premis 2**. Selama berabad-abad, banyak ilmuwan dan filsuf mengasumsikan alam semesta adalah kekal — tak bermula, tak berakhir. Einstein sendiri awalnya memanipulasi persamaannya untuk menghindari kesimpulan alam semesta yang bermula, karena implikasinya terasa "teistik".
+
+Tapi data kosmologi modern secara konsisten menunjukkan sebaliknya. **Teori Big Bang** memposisikan alam semesta bermula ~13,8 miliar tahun lalu dari kondisi singularitas. **Teorema Penrose-Hawking** (1970) menunjukkan bahwa ruang-waktu itu sendiri bermula — bukan hanya materi dan energi. **Teorema Borde-Guth-Vilenkin** (2003) membuktikan bahwa setiap alam semesta yang secara rata-rata mengalami ekspansi — termasuk model multiverse — **harus memiliki batas waktu awal**. Artinya: bahkan jika ada multiverse, multiverse itu sendiri tidak bisa kekal ke belakang.`,
+insight:`"Big Bang bukan hanya awal dari materi dan energi. Ini adalah awal dari ruang dan waktu itu sendiri. Pertanyaan 'apa yang terjadi sebelumnya' bukan hanya tidak terjawab — pertanyaan itu secara harfiah tidak bermakna dalam kerangka fisika. Dan itu menarik."`,
+cite:`— Borde, Guth, Vilenkin, "Inflationary Spacetimes Are Incomplete", 2003`},
+
+{id:7,ch:2,title:'Big Bang: Awal yang Butuh Penjelasan',tag:'kosmologi',
+body:`Ketika Georges Lemaître, pastor Katolik sekaligus fisikawan, mengusulkan "hipotesis atom primordial" pada 1927 — yang kemudian dikenal sebagai Big Bang — **Fred Hoyle** menolaknya dengan alasan bahwa itu terlalu mirip dengan penciptaan religius. Ironinya, istilah "Big Bang" sendiri diciptakan Hoyle sebagai ejekan. Bukti akhirnya mengkonfirmasi Lemaître.
+
+Apa yang dikatakan Big Bang secara teknis: sekitar 13,8 miliar tahun lalu, seluruh materi, energi, ruang, dan **waktu** itu sendiri muncul dari kondisi yang tak terhingga padat dan panas. Ini bukan ledakan *di dalam* ruang — ini adalah ekspansi ruang itu sendiri. Tidak ada "sebelum" Big Bang dalam pengertian temporal biasa karena waktu sendiri adalah bagian dari apa yang bermula.
+
+Ini memiliki implikasi filosofis yang mendalam: jika waktu bermula, maka penyebab dari alam semesta harus **berada di luar waktu** — yaitu kekal. Jika ruang bermula, penyebabnya harus **tidak terspatial** — tidak memiliki lokasi fisik. Jika materi bermula, penyebabnya harus **non-material**. Dan jika alam semesta bermula, penyebabnya harus memiliki kekuasaan untuk menciptakan keberadaan. Ini adalah profil yang, dalam terminologi teologi apofatik, sangat mirip dengan deskripsi Tuhan dalam tradisi monoteistik besar.`,
+insight:`"Sains modern memberikan kepada kita sesuatu yang luar biasa: bukti empiris bahwa alam semesta memiliki awal. Dan segala sesuatu yang memiliki awal butuh penyebab yang melampaui dirinya sendiri."`,
+cite:`— Georges Lemaître, 1927; dikembangkan lebih lanjut oleh Vilenkin, 2012`},
+
+{id:8,ch:2,title:'Argumen Aquinas: Lima Jalan Menuju Wujud Pertama',tag:'teologi-natural',
+body:`**Thomas Aquinas** (1225–1274) dalam *Summa Theologica* menyusun lima argumen (*Quinque Viae*) untuk keberadaan Tuhan. Dua yang paling relevan dan bertahan dari kritik:
+
+**Jalan Pertama — Gerak**: segala sesuatu yang bergerak digerakkan oleh sesuatu yang lain. Tidak mungkin ada rantai penggerak yang tak terbatas ke belakang — karena jika demikian, tidak akan ada gerakan sama sekali saat ini. Maka harus ada **Penggerak Pertama** yang tidak digerakkan oleh apapun.
+
+**Jalan Kedua — Kausalitas Efisien**: setiap akibat memiliki sebab. Tidak ada sesuatu yang menjadi sebab bagi dirinya sendiri — karena itu berarti ia harus ada sebelum ia ada (kontradiksi). Rantai kausal tidak mungkin regresif tak terbatas secara *aktual*. Maka harus ada **Sebab Pertama** yang tidak memiliki sebab di luarnya.
+
+Kritikus utama Aquinas biasanya menyerang premis "tidak mungkin rantai kausal tak terbatas". **David Hume** menyatakan tidak ada kontradiksi dalam rantai tak terbatas. Tapi Aquinas berbicara tentang rangkaian kausal yang **simultan dan aktual** — bukan rangkaian temporal. Seperti buku yang diangkat oleh tangan yang diangkat oleh lengan yang dikontraksi oleh sinyal saraf yang diperintah otak yang *sekarang* aktif — bukan rangkaian yang hanya historis. Untuk rangkaian jenis ini, regres tak terbatas memang tidak bisa bekerja.`,
+insight:`"Aquinas bukan sedang berteologi ketika ia menulis *Quinque Viae*. Ia sedang berfilsafat — dengan rigor yang banyak filsuf analitik kontemporer anggap lebih kuat dari yang diasumsikan populer."`,
+cite:`— Thomas Aquinas, Summa Theologica I, Q. 2, Art. 3, c. 1265–1274`},
+
+{id:9,ch:2,title:'Ketidakmungkinan Infinity Aktual',tag:'metafisika',
+body:`Satu dari premis paling teknis tapi paling penting dalam argumen Kalam adalah klaim bahwa **infinitas aktual tidak mungkin ada di dunia fisik**. Ini dibedakan dari infinitas potensial: deret angka 1, 2, 3, ... bisa terus ditambahkan tanpa batas (*potentially* infinite) — tapi tidak pernah pada waktu nyata ada deret yang benar-benar sudah mencapai infinitas (*actually* infinite).
+
+**Paradoks Hilbert's Hotel** menggambarkan absurditas infinitas aktual: Hotel dengan kamar tak terbatas yang semuanya terisi penuh bisa "mengakomodasi" tamu baru tanpa batas — dengan memindahkan setiap tamu ke nomor kamar berikutnya. Hasilnya: jumlah tamu tidak berubah meski jumlah tamu "bertambah". Ini bukan masalah persepsi — ini implikasi matematis dari infinitas aktual yang, jika diterapkan pada entitas fisik nyata, menghasilkan kontradiksi.
+
+Jika alam semesta memiliki masa lalu yang tak terbatas secara aktual — yaitu sudah terlewati jumlah kejadian yang benar-benar tak terbatas hingga saat ini — maka **hari ini tidak akan pernah tiba**. Tidak bisa menyelesaikan traversal sesuatu yang tak terbatas. Ini adalah argumen dari **G.J. Whitrow** (1978) dan **William Lane Craig** yang, meski diperdebatkan, belum pernah dijawab secara memuaskan oleh pihak yang menolaknya.`,
+insight:`"Matematika memperbolehkan infinitas aktual — tapi matematika tidak harus berkorespondensi dengan realitas fisik. Fisika dan filsafat punya alasan kuat untuk menolak keberadaan infinitas aktual di dunia nyata."`,
+cite:`— David Hilbert, 1924; G.J. Whitrow, 1978; W.L. Craig, 1979`},
+
+{id:10,ch:2,title:'Sifat Sebab Pertama yang Diimplikasikan',tag:'teologi-natural',
+body:`Jika argumen kosmologis berhasil — bahkan sebagai probabilitas yang lebih tinggi dari alternatifnya — maka kita bisa menyimpulkan sesuatu tentang sifat Sebab Pertama ini, bukan dari wahyu, tapi dari **implikasi logis** dari argumen itu sendiri.
+
+**Kekal**: karena waktu adalah bagian dari apa yang diciptakan, Sebab Pertama harus berada di luar waktu — tidak dimulai, tidak diakhiri. **Tidak terspatial**: ruang juga bermula; Sebab Pertama tidak berada di dalam ruang. **Tidak bermaterial**: materi dan energi bermula bersama alam semesta; Sebab Pertama bukan terdiri dari keduanya. **Sangat berkuasa**: menciptakan seluruh alam semesta fisik dari ketidakadaan membutuhkan kekuasaan yang melampaui apapun yang ada di dalam alam semesta. **Berkehendak**: ini yang paling menarik — mengapa penciptaan terjadi *saat itu* dan bukan sebelumnya? Jika Sebab hanya merupakan kondisi yang cukup tanpa kehendak, efeknya akan selalu ada (seperti matahari yang sinarnya selalu ada). Agar ada *tindakan* penciptaan di satu titik tertentu, Sebab harus memiliki sesuatu yang mirip dengan **kehendak**.
+
+Profil ini — kekal, tidak terspatial, tidak bermaterial, sangat berkuasa, berkehendak — adalah profil yang filsuf agama sebut **teisme minimal**: entitas yang, bahkan tanpa asumsi religius apapun, diimplikasikan oleh kosmologi modern.`,
+insight:`"Kita tidak membuktikan Allah dari Al-Quran atau Bibel. Kita menemukannya di ujung rantai kausal yang dimulai dari fisika partikel dan geometri ruang-waktu."`,
+cite:`— W.L. Craig, "Reasonable Faith", 3rd ed., 2008`},
+
+{id:11,ch:2,title:'Multiverse: Solusi atau Pelarian?',tag:'kosmologi',
+body:`Salah satu respons paling populer terhadap argumen kosmologis dan teleologis adalah **hipotesis multiverse**: mungkin ada jumlah alam semesta yang sangat besar atau tak terbatas dengan konstanta fisika yang bervariasi — dan kita berada di salah satunya yang "kebetulan" mendukung kehidupan karena hanya alam semesta seperti ini yang bisa diamati. Ini disebut **Prinsip Antropik**.
+
+Sekilas ini tampak meyakinkan. Tapi perhatikan beberapa masalah serius: **Pertama**, multiverse adalah hipotesis yang secara definisi tidak bisa diuji — tidak ada prediksi yang bisa difalsifikasi. Ini melanggar standar Popper untuk sains. Banyak fisikawan sendiri, termasuk **George Ellis** dan **Joe Silk**, menulis bahwa multiverse "mengancam status sains itu sendiri" (*Nature*, 2014). **Kedua**, seperti yang ditunjukkan oleh teorema **Borde-Guth-Vilenkin**, bahkan multiverse harus memiliki awal. Multiverse tidak menyelesaikan masalah kosmologis — ia memindahkannya satu level ke atas. **Ketiga**, multiverse membutuhkan mekanisme penghasil alam semesta yang itu sendiri membutuhkan penjelasan. Kita kembali ke pertanyaan yang sama: mengapa ada infrastruktur yang memungkinkan multiverse ada?`,
+insight:`"Multiverse bisa jadi benar — aku tidak menyangkalnya. Tapi sebagai solusi untuk pertanyaan ontologis paling dalam, ia tidak melakukan apa yang penganutnya klaim. Ia hanya menunda pertanyaan."`,
+cite:`— George Ellis & Joe Silk, "Scientific Method: Defend the Integrity of Physics", Nature 2014`},
+
+// ══ BAB 3: TELEOLOGI & DESAIN ══
+{id:12,ch:3,title:'Fine-Tuning: Konstanta yang Tidak Boleh Berbeda',tag:'fisika',
+body:`Alam semesta kita memiliki sekitar **26 konstanta fisika fundamental** — angka-angka seperti konstanta gravitasi, konstanta kosmologis, massa elektron, kekuatan gaya nuklir kuat dan lemah — yang nilainya tidak ditentukan oleh hukum fisika apa pun yang kita ketahui. Nilainya adalah **brute facts**: mereka ada seperti itu, dan fisika tidak menjelaskan mengapa.
+
+Yang mengejutkan para fisikawan adalah betapa **presisinya** angka-angka ini harus berada agar alam semesta yang mendukung kompleksitas dan kehidupan bisa ada. Contoh konkret: **Konstanta kosmologis** (energi gelap) yang mengontrol laju ekspansi alam semesta harus tepat senilai 1 dalam 10^120 dari semua nilai yang mungkin. Satu bagian dalam satu googolplex. Jika lebih besar sedikit, alam semesta mengembang terlalu cepat untuk struktur apapun terbentuk. Jika lebih kecil, ia runtuh dalam detik.
+
+**Kekuatan gaya nuklir kuat**: jika 2% lebih lemah, proton tidak bisa terikat — tidak ada atom selain hidrogen. Jika 2% lebih kuat, semua hidrogen sudah terbakar menjadi helium — tidak ada air, tidak ada bintang yang stabil, tidak ada kehidupan. **Fisikawan Paul Davies** (1983) dan **Martin Rees** (2000) mendokumentasikan ini secara ekstensif. Bukan hanya satu atau dua konstanta — puluhan dari mereka harus berada dalam jangkauan yang sangat sempit secara bersamaan.`,
+insight:`"Alam semesta tampak seperti ia di-setup. Seorang fisikawan yang menolak kesimpulan itu harus berani menyatakan dari mana fine-tuning ini berasal — dan sejauh ini tidak ada jawaban yang memuaskan selain desain atau keberuntungan kosmis yang melampaui imajinasi."`,
+cite:`— Paul Davies, "The Accidental Universe", 1982; Martin Rees, "Just Six Numbers", 2000`},
+
+{id:13,ch:3,title:'Argumen Teleologis: Dari Paley ke Fisika Modern',tag:'teleologi',
+body:`**William Paley** (1802) mengajukan analogi jam: jika kamu menemukan jam di ladang, kamu tidak akan menyimpulkan ia terbentuk sendiri dari batu dan logam yang berevolusi secara acak — kompleksitasnya yang fungsional menunjukkan adanya pembuat jam. **Richard Dawkins** menyerang analogi ini dalam "The Blind Watchmaker" (1986) dengan menyatakan bahwa evolusi biologis menjelaskan kompleksitas tanpa desainer.
+
+Tapi Dawkins merespons argumen Paley untuk **biologi** — dan di sana ia mungkin benar bahwa evolusi memberikan mekanisme non-teistik. Yang Dawkins tidak sentuh secara memadai adalah versi teleologis untuk **fisika fundamental**: siapa yang membuat jam pembuat jam? Evolusi bisa menjelaskan kompleksitas biologis jika alam semesta fisika sudah di-fine-tune untuk memungkinkan bintang, karbon, air, dan replikasi kimia ada. Tapi siapa yang mengatur konstanta fisika tersebut?
+
+**Robin Collins** (2002) dan **Luke Barnes** (2020) mengembangkan argumen fine-tuning sebagai versi teleologis yang tidak bisa diserang dengan cara yang sama seperti Paley diserang. Keberatan multiverse memang muncul di sini — tapi seperti dibahas sebelumnya, multiverse bukan solusi yang memuaskan untuk pertanyaan ontologis yang lebih dalam.`,
+insight:`"Dawkins benar tentang Paley dalam konteks biologi. Tapi fisika fundamental mengajukan pertanyaan desain di level yang evolusi bahkan tidak bisa mulai menyentuhnya."`,
+cite:`— Robin Collins, "The Teleological Argument", dalam "The Blackwell Companion to Natural Theology", 2009`},
+
+{id:14,ch:3,title:'Keberadaan Hukum Alam: Pertanyaan yang Sering Diabaikan',tag:'filsafat-sains',
+body:`Kita begitu terbiasa dengan hukum alam hingga lupa mengajukan pertanyaan yang paling mendasar tentangnya: **mengapa ada hukum alam sama sekali?** Mengapa alam semesta berperilaku secara teratur, dapat diprediksi, dan dapat dijelaskan secara matematis? Tidak ada dalam fisika yang menjelaskan mengapa hukum fisika ada — hukum fisika hanya mendeskripsikan bagaimana sesuatu berperilaku, bukan mengapa ada regularitas yang dapat dideskripsikan.
+
+Bahkan lebih mengejutkan: mengapa matematika bekerja? Fisikawan **Eugene Wigner** (1960) menyebutnya "keefektifan matematika yang tidak masuk akal" (*the unreasonable effectiveness of mathematics in the natural sciences*). Matematika adalah konstruksi pikiran abstrak manusia — dan ia ternyata mendeskripsikan realitas fisik dengan presisi yang menakjubkan. Apakah ini kebetulan?
+
+**John Polkinghorne**, fisikawan partikel dan teolog, berargumen bahwa keteraturan matematis alam semesta menunjukkan bahwa alam semesta lahir dari pikiran yang matematis — *Logos* dalam terminologi Yunani. **Roger Penrose** dalam "The Road to Reality" (2004) mendokumentasikan hubungan mendalam antara matematika dan fisika tanpa memberikan penjelasan naturalistik yang memuaskan mengapa hubungan itu ada.`,
+insight:`"Jika alam semesta adalah produk kebetulan buta, maka kehendak buta itu adalah matematikawan yang lebih handal dari siapapun yang pernah ada. Dan entah bagaimana, itu terasa kurang masuk akal daripada alternatifnya."`,
+cite:`— Eugene Wigner, "The Unreasonable Effectiveness of Mathematics", 1960`},
+
+{id:15,ch:3,title:'Asal Usul Kehidupan: Masalah yang Belum Terpecahkan',tag:'biologi',
+body:`Evolusi Darwinian menjelaskan diversifikasi kehidupan dengan sangat baik — tapi ia membutuhkan satu syarat: sudah ada entitas yang bisa bereplikasi. **Abiogenesis** — munculnya kehidupan dari materi non-hidup — adalah masalah yang terpisah dari evolusi dan, setelah lebih dari 70 tahun riset intensif sejak eksperimen Miller-Urey (1953), **belum memiliki solusi yang disepakati**.
+
+Masalah intinya adalah **ayam dan telur pada level molekular**: protein dibutuhkan untuk mensintesis DNA, tapi DNA dibutuhkan untuk mensintesis protein. Hipotesis "Dunia RNA" mengusulkan RNA sebagai molekul awal yang bisa melakukan keduanya — tapi sintesis RNA yang stabil dari bahan kimia sederhana belum berhasil didemonstrasikan dalam kondisi pre-biotik yang realistis setelah puluhan tahun dicoba.
+
+**David Baltimore**, pemenang Nobel Fisiologi/Kedokteran, menyatakan bahwa asal usul kehidupan adalah "masalah yang sangat sulit sehingga beberapa orang paling cerdas di dunia... telah gagal menawarkan solusi yang bisa bertahan terhadap kritik." Ini bukan kreasi saintifik — ini pengakuan jujur dari komunitas ilmiah sendiri. Probabilitas kemunculan bahkan protein sederhana secara spontan dari asam amino acak adalah sekitar 1 dalam 10^164 — angka yang membuat konsep keberuntungan murni menjadi sangat tidak masuk akal.`,
+insight:`"Evolusi adalah salah satu teori terkuat dalam sains. Tapi evolusi tidak menjawab pertanyaan bagaimana kehidupan pertama muncul. Dan di titik itulah, kejujuran intelektual meminta kita untuk tidak pura-pura masalahnya sudah selesai."`,
+cite:`— David Baltimore; Fred Hoyle & Chandra Wickramasinghe, "Evolution from Space", 1981`},
+
+{id:16,ch:3,title:'Kesadaran: Misteri Keras yang Menantang Materialisme',tag:'filsafat-pikiran',
+body:`**David Chalmers** (1995) merumuskan apa yang ia sebut **"masalah keras kesadaran"** (*the hard problem of consciousness*): bagaimana dan mengapa proses fisik dalam otak menghasilkan **pengalaman subjektif** (*qualia*) — rasa sakit, warna merah yang kamu lihat, rasa kopi di lidahmu? Kita bisa menjelaskan fungsi otak secara mekanis — tapi tidak ada penjelasan mengapa fungsi-fungsi itu *disertai* pengalaman dari dalam.
+
+Ini berbeda dari pertanyaan "bagaimana otak memproses informasi" (yang bisa dijawab neurosains). Ini pertanyaan "mengapa ada *seseorang* yang mengalami pemrosesan itu." **Francis Crick** berharap neurosains akan menyelesaikan ini; **Christof Koch** mengakui setelah puluhan tahun riset bahwa masalahnya semakin dalam, bukan semakin dangkal.
+
+**Argumen dari kesadaran**: jika materialisme benar, semua yang ada adalah partikel fisik yang berinteraksi secara mekanis. Tapi pengalaman subjektif tidak tampak seperti sesuatu yang bisa direduksi menjadi deskripsi fisik apapun — karena deskripsi fisik selalu berbicara dari sudut pandang orang ketiga, sementara kesadaran secara esensial adalah perspektif orang pertama. Dua entitas bisa identik secara fisik tapi satu memiliki pengalaman dan satu tidak (*philosophical zombie*). Jika ini konsep yang koheren — dan banyak filsuf pikiran menerimanya — maka kesadaran tidak identik dengan proses fisik.`,
+insight:`"Kita adalah satu-satunya entitas di alam semesta yang diketahui mengajukan pertanyaan. Dan pertanyaan tentang mengapa kita bisa bertanya — itulah celah yang paling menarik dalam seluruh proyek materialisme."`,
+cite:`— David Chalmers, "Facing Up to the Problem of Consciousness", 1995`},
+
+{id:17,ch:3,title:'Informasi: Sifat Mendasar Realitas yang Non-Material',tag:'fisika',
+body:`Fisikawan **John Archibald Wheeler** (1990) mencetuskan frasa revolusioner: **"It from Bit"** — realitas fisik muncul dari informasi. Ini bukan metafora; Wheeler berargumen bahwa informasi, bukan materi-energi, adalah substrat paling fundamental dari realitas. **Anton Zeilinger** dan komunitas fisika kuantum informasi mengembangkan gagasan ini lebih lanjut.
+
+Mengapa ini relevan? Karena **informasi tidak pernah diamati muncul dari proses fisik murni yang acak**. Informasi selalu berasal dari pikiran. Buku mengandung informasi bukan karena tinta dan kertas berinteraksi secara kimia, tapi karena ada pikiran yang mengkodekan makna ke dalam pola itu. DNA mengandung informasi — sekuens spesifik nukleotida yang mengkode instruksi spesifik — yang secara struktural tidak bisa dijelaskan hanya oleh kimia yang mendasarinya.
+
+**Stephen Meyer** dalam "Signature in the Cell" (2009) berargumen bahwa informasi biologis dalam DNA menunjukkan kecerdasan sebab-pertama, bukan proses acak. Keberatan bahwa evolusi menghasilkan informasi baru melalui mutasi dan seleksi tidak menjawab pertanyaan Meyer — karena evolusi bekerja *pada* informasi yang sudah ada, tidak menjelaskan bagaimana informasi pertama muncul dari proses yang tidak memiliki kecerdasan.`,
+insight:`"Satu pesan dari DNA mengandung informasi lebih banyak dari buku terlengkap yang pernah ditulis manusia. Dan informasi, dalam pengalaman kita yang tak terbatas, selalu berasal dari pikiran."`,
+cite:`— John A. Wheeler, "Information, Physics, Quantum", 1990; Stephen Meyer, 2009`},
+
+// ══ BAB 4: MORALITAS & NILAI ══
+{id:18,ch:4,title:'Argumen Moral: Dari Mana Datangnya Kewajiban Objektif?',tag:'etika',
+body:`**Immanuel Kant** (1724–1804), filsuf yang terkenal agnostik tentang argumen tradisional untuk Tuhan, justru membangun argumen moral yang ia nilai sebagai alasan paling kuat untuk menerima postulat keberadaan Tuhan. Bukan sebagai bukti kosmologis, tapi sebagai **postulat akal praktis**: moralitas yang benar-benar mengikat membutuhkan fondasi yang melampaui preferensi manusia.
+
+Argumennya dimulai dari fakta fenomenologis: manusia mengalami kewajiban moral bukan sebagai pilihan pribadi, tapi sebagai **tuntutan yang mengikat** — seolah ada sesuatu yang *memaksa* secara normatif. Kant menyebut ini **imperatif kategoris**. Tapi apa yang memberikan kekuatan normatif kepada kewajiban moral? Jika moralitas hanya evolusioner — preferensi yang membantu kelangsungan hidup gen — maka "kamu tidak boleh menyiksa anak yang tidak bersalah" adalah pernyataan yang setara dengan "aku tidak suka kopi": preferensi, bukan kewajiban.
+
+**C.S. Lewis** dalam "Mere Christianity" (1952) membangun argumen serupa dari pengalaman sehari-hari: manusia tidak hanya berperilaku tertentu — mereka merasa *seharusnya* berperilaku tertentu, dan merasa *bersalah* ketika tidak. Rasa bersalah tidak dapat dijelaskan oleh seleksi alam semata — karena rasa bersalah sering kali bertentangan dengan kelangsungan hidup. Ini menunjukkan ada sesuatu yang tertanam di dalam manusia yang **merespons standar yang melampaui biologi**.`,
+insight:`"Jika moralitas hanya evolusi, maka mengatakan Hitler salah secara moral sama artinya dengan mengatakan selera musiknya buruk — sebuah preferensi, bukan kebenaran. Dan hampir semua orang, secara intuitif, menolak kesimpulan itu."`,
+cite:`— C.S. Lewis, "Mere Christianity", 1952; Kant, "Critique of Practical Reason", 1788`},
+
+{id:19,ch:4,title:'Masalah Euthyphro dan Solusinya',tag:'etika',
+body:`**Plato** dalam dialog *Euthyphro* mengajukan dilema yang masih diperdebatkan: apakah sesuatu baik karena Tuhan memerintahkannya, atau Tuhan memerintahkannya karena itu baik? Jika yang pertama, maka kebaikan tampak arbitrer — Tuhan bisa memerintahkan penyiksaan dan itu menjadi "baik". Jika yang kedua, maka ada standar kebaikan yang independen dari Tuhan — yang tampaknya melemahkan teosentrisme moral.
+
+Respons standar dalam filsafat teistik kontemporer, dikembangkan oleh **Thomas Morris**, **William Alston**, dan **Robert Adams**: **dilema Euthyphro adalah pilihan palsu**. Solusinya adalah menyatakan bahwa sifat moral Tuhan **adalah** sumber kebaikan — bukan bahwa Tuhan mematuhi standar eksternal, bukan bahwa Tuhan menciptakan standar secara arbitrer, melainkan bahwa kebaikan sendiri adalah **sifat esensial Tuhan**. Tuhan tidak bisa memerintahkan penyiksaan anak yang tidak bersalah bukan karena ada aturan eksternal yang melarangnya, tapi karena tindakan seperti itu bertentangan dengan sifat Tuhan yang esensial.
+
+Ini bukan jawaban yang memenangkan semua orang — tapi ia memindahkan diskusi ke tempat yang lebih serius: bukan "apakah Tuhan sewenang-wenang", tapi "apakah konsep Tuhan yang bermoral secara esensial itu koheren?" Dan argumen bahwa itu tidak koheren belum pernah didemonstrasikan dengan meyakinkan.`,
+insight:`"Euthyphro menantang teisme moral sejak 400 SM. Bahwa ia masih didiskusikan dengan serius oleh filsuf analitik terbaik hari ini menunjukkan bahwa jawaban teistik tidaklah mudah diselesaikan — tapi juga tidak mudah ditolak."`,
+cite:`— Robert M. Adams, "Finite and Infinite Goods", 1999`},
+
+{id:20,ch:4,title:'Nilai Intrinsik Manusia: Darimanakah Martabat?',tag:'etika',
+body:`**Deklarasi Universal HAM** menyatakan bahwa semua manusia memiliki martabat yang "inheren" (*inherent dignity*). Ini adalah klaim yang sangat kuat — dan secara filosofis sangat problematis dalam kerangka materialisme murni.
+
+Jika manusia adalah kumpulan atom yang terevoluasi secara acak tanpa tujuan atau makna intrinsik, maka **dasar untuk klaim martabat inheren** tidak jelas. Mengapa kumpulan atom yang berevolusi di Bumi memiliki "martabat"? Atom-atom tidak memiliki hak. Proses evolusi tidak menghasilkan "martabat" — ia menghasilkan adaptasi. Kerangka HAM meminjam secara diam-diam dari tradisi teistik (khususnya konsep *Imago Dei* — manusia sebagai citra Tuhan) sambil menolak fondasinya.
+
+**Michael Ruse**, filsuf evolusioner dan ateis yang jujur, mengakui ini: "Moralitas adalah ilusi yang dihasilkan oleh evolusi untuk membuat kita berperilaku sosial. Tidak ada alas objektif untuk etika." Ia setidaknya konsisten. Masalahnya: jika itu benar, maka "genosida itu salah" tidak lebih dari ekspresi preferensi evolutif — dan terhadap Stalin yang membasmi jutaan orang, kita tidak bisa berkata lebih dari "aku tidak suka apa yang kamu lakukan." Hampir semua orang mengalami ini sebagai kesimpulan yang secara moral tidak bisa diterima — dan **reaksi moral itu sendiri adalah data**.`,
+insight:`"Fondasi HAM adalah teologis dalam asal-usulnya, bahkan jika tidak dinyatakan demikian. Tanpa fondasi itu, 'hak' adalah konvensi sosial — kuat saat ada yang menegakkannya, tidak ada saat tidak."`,
+cite:`— Michael Ruse, "The Darwinian Paradigm", 1989; John Finnis, "Natural Law and Natural Rights", 1980`},
+
+{id:21,ch:4,title:'Masalah Kejahatan: Keberatan Terbesar',tag:'teodisi',
+body:`Ini adalah argumen **melawan** keberadaan Tuhan yang paling kuat dan harus dihadapi secara jujur, bukan diabaikan. **Argumen dari kejahatan**: jika Tuhan ada dan Maha Baik, Maha Tahu, dan Maha Kuasa, mengapa ada penderitaan yang tidak bisa dibenarkan — anak yang tidak bersalah menderita kanker, bencana alam yang membunuh ratusan ribu orang, kekejaman manusia yang tidak tertandingi?
+
+**David Hume** merumuskan ini sebagai trilemma: Tuhan ingin mencegah kejahatan tapi tidak bisa (tidak maha kuasa), atau bisa tapi tidak mau (tidak maha baik), atau tidak tahu kejahatan itu ada (tidak maha tahu). Tidak ada opsi keempat.
+
+Respons tradisional (*theodicy*): **Free Will Defense** dari **Alvin Plantinga** (1977) — kejahatan moral muncul dari kebebasan manusia, dan dunia dengan makhluk bebas yang menggunakan kebebasannya untuk kebaikan secara intrinsik lebih bernilai dari dunia robot yang tidak bisa berbuat salah. **Soul-making theodicy** dari **John Hick** — penderitaan adalah kondisi yang diperlukan untuk pertumbuhan moral dan karakter. Untuk **kejahatan natural** (bencana, penyakit), argumen free will tidak langsung berlaku — dan ini adalah celah yang paling keras dari argument from evil.
+
+Satu respons yang sering diabaikan: argumen dari kejahatan **meminjam** konsep "kejahatan" yang membutuhkan standar moral objektif untuk bermakna — dan standar moral objektif, seperti diargumentasikan dalam bab ini, justru mendukung tesis teistik.`,
+insight:`"Masalah kejahatan adalah argumen terberat melawan teisme. Siapapun yang mengklaim bisa menjawabnya sepenuhnya sedang berbohong. Tapi ia bukan bukti konklusif ateisme — ia adalah misteri yang harus ditanggung secara jujur dari kedua arah."`,
+cite:`— Alvin Plantinga, "God, Freedom, and Evil", 1977; John Hick, "Evil and the God of Love", 1966`},
+
+{id:22,ch:4,title:'Argumen Ontologis: Tuhan yang Tidak Bisa Tidak Ada',tag:'ontologi',
+body:`**Anselmus dari Canterbury** (1078) merumuskan argumen yang mungkin paling kontroversial dan paling diperdebatkan dalam sejarah filsafat: Tuhan adalah *id quo maius cogitari nequit* — **"sesuatu yang lebih besar darinya tidak bisa dibayangkan"**. Jika Tuhan hanya ada dalam pikiran (sebagai konsep), maka kita bisa membayangkan sesuatu yang lebih besar — yaitu sesuatu yang sama dengan konsep itu *tapi juga ada di realitas*. Kontradiksi. Jadi Tuhan harus ada di realitas.
+
+**Kant** menolaknya: "keberadaan bukan predikat" — kamu tidak bisa menambahkan "ada di realitas" sebagai properti yang memperbesar sesuatu, karena keberadaan bukan properti konten. **Plantinga** (1974) merespons dengan **modal ontological argument** yang lebih canggih: dalam logika modal (sistem S5), jika keberadaan yang niscaya (*necessary existence*) secara konseptual mungkin, maka ia actual. Argumen ini valid secara formal — perdebatannya hanya pada apakah premisnya benar.
+
+Yang menarik dari argumen ontologis bukan bahwa ia terbukti konklusif — tapi bahwa setelah 950 tahun, belum ada yang bisa menunjukkan secara meyakinkan di mana tepatnya kesalahannya. Setiap generasi filsuf mencoba, dan argumen itu bertahan dalam berbagai formulasi baru.`,
+insight:`"Argumen ontologis adalah satu-satunya argumen dalam filsafat yang diciptakan dalam doa — Anselmus menulis *Proslogion* sebagai meditasi religius, bukan karya akademik. Mungkin itu sebabnya ia memiliki ketahanan yang berbeda dari argumen biasa."`,
+cite:`— Anselm, Proslogion, 1078; Plantinga, "The Nature of Necessity", 1974`},
+
+// ══ BAB 5: MANUSIA & EKSISTENSI ══
+{id:23,ch:5,title:'Universalitas Agama: Data yang Membutuhkan Penjelasan',tag:'antropologi',
+body:`Tidak ada satu peradaban manusia yang diketahui dalam seluruh catatan arkeologi dan antropologi yang hidup tanpa bentuk kepercayaan religius atau spiritualitas. **Ritualisme Neanderthal** (60.000–120.000 tahun lalu) menunjukkan penguburan dengan bunga dan artefak — indikasi kepercayaan tentang kehidupan setelah mati. **Göbekli Tepe** (12.000 tahun lalu, sebelum pertanian menetap) adalah struktur religius monumenter yang menunjukkan bahwa manusia membangun kuil sebelum membangun kota.
+
+Ini adalah data empiris yang membutuhkan penjelasan. Penjelasan materialistik populer: agama adalah produk sampingan evolusi untuk kohesi sosial (*group selection*), atau mekanisme manajerial stres, atau *Theory of Mind* yang berlebihan (kecenderungan melihat agen di balik peristiwa). Penjelasan ini mungkin benar sebagian — tapi ada masalah: ia menjelaskan mengapa manusia *berperilaku* religius, tidak mengapa agama **universal** dan **kompleks secara konsisten** lintas budaya yang tidak pernah saling berhubungan.
+
+**Andrew Newberg** dan **Eugene d'Aquili** dalam neurosains religius menunjukkan bahwa pengalaman spiritual yang paling mendalam — termasuk rasa kesatuan, kehadiran yang transenden — dihasilkan oleh pola aktivasi otak tertentu yang ada pada **semua manusia**, lintas budaya, lintas agama. Ini bisa dibaca sebagai "otak yang menipu diri" — atau sebagai "otak yang memiliki reseptor untuk sesuatu yang nyata".`,
+insight:`"Bahwa semua manusia, tanpa terkecuali dalam sejarah, merasakan kebutuhan untuk berhubungan dengan yang transenden — itu bukan statistik yang bisa diabaikan begitu saja. Ini adalah data terbesar dalam seluruh sejarah manusia."`,
+cite:`— Andrew Newberg & Eugene d'Aquili, "Why God Won't Go Away", 2001; Pascal Boyer, "Religion Explained", 2001`},
+
+{id:24,ch:5,title:'Argumen dari Kerinduan: C.S. Lewis dan Sehnsucht',tag:'eksistensialisme',
+body:`**C.S. Lewis** — yang pernah menjadi ateis sebelum menjadi apologet Kristen paling terkemuka abad ke-20 — mengembangkan argumen yang ia sebut *argument from desire* atau **Sehnsucht** (kata Jerman untuk kerinduan yang tidak terpenuhi): manusia secara universal mengalami kerinduan yang tidak bisa dipuaskan oleh apapun di dunia ini.
+
+Strukturnya: setiap hasrat alamiah manusia — lapar, haus, seks, kasih sayang — memiliki objek yang **benar-benar ada** yang bisa memenuhinya. Tapi manusia juga mengalami hasrat lain yang tidak bisa dipuaskan oleh hal duniawi manapun — kerinduan akan keindahan yang tidak pernah bisa ditangkap sepenuhnya, akan keadilan yang sempurna, akan makna yang melampaui kematian. Jika setiap hasrat alamiah memiliki objek nyata yang memenuhinya, maka kerinduan yang tidak terpenuhi ini menunjukkan adanya objek yang **melampaui dunia ini**.
+
+Argumen ini jelas tidak konklusif secara logis — Lewis sendiri tidak mengklaimnya demikian. Tapi ia berbicara tentang **data fenomenologis** yang sering diabaikan dalam diskusi rasional tentang Tuhan: bahwa hampir semua manusia mengalami momen di mana dunia ini terasa **tidak cukup**, bahwa ada sesuatu yang "seharusnya ada" yang belum ditemukan. **Peter Kreeft** mengembangkan argumen ini lebih lanjut dengan mendokumentasikan fenomenologinya secara sistematis.`,
+insight:`"Jika seluruh alam semesta ini tidak bisa memuaskan hasrat yang paling dalam dari satu makhluk di dalamnya — ada dua kemungkinan: makhluk itu gila, atau ada yang lebih dari alam semesta ini. Dan manusia normal, bermilyar-milyar, tidak gila."`,
+cite:`— C.S. Lewis, "Mere Christianity", 1952; "Surprised by Joy", 1955`},
+
+{id:25,ch:5,title:'Pencarian Makna: Frankl, Eksistensialisme, dan Kekosongan',tag:'eksistensialisme',
+body:`**Viktor Frankl**, psikiater Austria yang selamat dari Auschwitz, mengembangkan **logoterapi** — terapi berbasis pencarian makna. Observasinya di kamp konsentrasi Nazi: mereka yang bertahan bukan hanya yang paling kuat secara fisik, tapi yang memiliki **makna untuk bertahan** — tugas yang belum selesai, orang yang dicintai, tujuan yang harus dicapai. "Orang yang tahu *mengapa* ia hidup bisa menanggung hampir semua *bagaimana*" (*Nietzsche*, diadaptasi Frankl).
+
+**Eksistensialisme ateis** — Sartre, Camus — mengakui bahwa alam semesta inherently tidak memiliki makna (*absurd*). Solusi mereka: manusia harus **menciptakan makna sendiri**. Ini adalah posisi yang jujur dan berani — tapi ia memiliki implikasi yang tidak nyaman: makna yang *diciptakan* adalah makna *yang tidak ada sebelum kita menciptakannya*, dan akan tidak ada setelah kita tidak ada. Itu bukan makna yang tahan uji kematian.
+
+Frankl berpendapat bahwa kebutuhan akan makna bukan sekadar fitur psikologis yang bisa diasosiasikan dengan kecocokan evolusi — ia adalah **kebutuhan ontologis** yang menunjuk ke sesuatu di luar diri. Orang yang kehilangan semua makna mengalami bukan sekadar kesedihan, tapi kehancuran eksistensial yang berbeda secara kualitatif. Ini menunjukkan bahwa makna memiliki "bobot ontologis" yang berbeda dari sekadar preferensi.`,
+insight:`"Alam semesta yang benar-benar tidak memiliki makna tidak akan menghasilkan makhluk yang haus makna. Kebutuhan akan makna adalah bukti untuk kemungkinan keberadaannya — sama seperti lapar adalah bukti kemungkinan keberadaan makanan."`,
+cite:`— Viktor Frankl, "Man's Search for Meaning", 1946`},
+
+{id:26,ch:5,title:'Pengalaman Mistis: Data yang Terlalu Konsisten untuk Diabaikan',tag:'neurosains',
+body:`**William James** dalam "The Varieties of Religious Experience" (1902) mendokumentasikan ribuan laporan pengalaman religius dari seluruh dunia dan menemukan konsistensi yang mengejutkan: rasa persatuan dengan yang transenden, perasaan hadir di depan sesuatu yang infinitely real, iluminasi mendalam yang tidak bisa sepenuhnya diungkapkan dengan bahasa, transformasi karakter yang permanen sesudahnya.
+
+**Survei Gallup** dan berbagai studi sosiologis secara konsisten menemukan bahwa ~35% populasi di negara-negara sekuler sekalipun melaporkan setidaknya satu pengalaman religius atau spiritual yang kuat dalam hidup mereka. Angka ini tidak berubah signifikan dengan peningkatan pendidikan — berbeda dari apa yang diprediksi teori sekularisasi sederhana.
+
+**Neurosains** dapat mendeskripsikan korelasi neural dari pengalaman ini — area tertentu di otak, pola gelombang. Tapi seperti dikemukakan dalam masalah kesadaran, korelasi bukan reduksi. Bahwa otak aktif saat kita mengalami sesuatu tidak membuktikan bahwa yang kita alami tidak nyata — otak juga aktif saat kita melihat pohon, tapi pohon itu nyata. **Alvin Plantinga** berargumen bahwa pengalaman religius adalah bukti dasar (*basic evidence*) yang tidak kalah epistemik validitasnya dari persepsi sensorik.`,
+insight:`"Jika jutaan orang dalam setiap generasi dan setiap budaya melaporkan bertemu dengan yang sama — sesuatu yang transenden, riil, dan transformatif — menjelaskan ini sebagai 'delusi massal kolektif' membutuhkan lebih banyak penjelasan daripada alternatifnya."`,
+cite:`— William James, "The Varieties of Religious Experience", 1902; Alvin Plantinga, "Warranted Christian Belief", 2000`},
+
+{id:27,ch:5,title:'Kondisi Kematian dan Kehidupan Setelahnya',tag:'eksistensialisme',
+body:`Kesadaran akan kematian adalah keunikan manusia yang paling mendasar. Hewan bereaksi terhadap ancaman kematian secara insting — tapi hanya manusia yang *mengetahui* bahwa ia akan mati dan hidup di bawah bayangan pengetahuan itu. **Ernest Becker** dalam "The Denial of Death" (Pulitzer 1973) berargumen bahwa hampir seluruh konstruksi budaya manusia — peradaban, seni, agama, pengejaran keabadian simbolik — adalah respons terhadap **kengerian kematian**.
+
+Jika materialisme benar — dan kesadaran adalah sepenuhnya produk fisik otak — maka kematian adalah penghentian total dari setiap aspek "aku": pengalaman, memori, hubungan, semua yang membuat seseorang menjadi seseorang. Ini bukan hanya fakta biologis; ini adalah **klaim metafisik yang sangat berat**. Dan ia menghasilkan implikasi yang, jika dipikirkan konsekuensinya secara penuh, menghancurkan semua nilai dan makna — karena semuanya tanpa terkecuali menuju nol.
+
+**Near-death experiences (NDE)**: **Pim van Lommel** (kardiologis, "Consciousness Beyond Life", 2010) mendokumentasikan kasus-kasus NDE yang terjadi saat otak tidak aktif secara elektrik — yang secara teoritis tidak seharusnya bisa menghasilkan pengalaman apapun. Ini belum membuktikan keabadian, tapi menantang model sederhana "otak = kesadaran".`,
+insight:`"Setiap filsafat yang tidak bisa menghadapi kematian secara jujur adalah filsafat yang belum selesai. Agama-agama besar dunia tidak menghindari kematian — mereka membangun seluruh pandangan dunia di atas dan melaluinya."`,
+cite:`— Ernest Becker, "The Denial of Death", 1973; Pim van Lommel, 2010`},
+
+// ══ BAB 6: AGAMA & KEMANUSIAAN ══
+{id:28,ch:6,title:'Mengapa Agama, Bukan Hanya Teisme?',tag:'filsafat-agama',
+body:`Sejauh ini argumen dalam buku ini mengarah ke **teisme**: keberadaan Tuhan atau Wujud yang melampaui alam semesta. Tapi mengapa agama — dengan ritual, teks suci, komunitas, hukum, dan praktik — dan bukan sekadar keyakinan pribadi tentang Tuhan?
+
+Pertanyaan ini valid dan penting. **Jawaban pertama** bersifat epistemik: jika Tuhan ada dan ingin dikenal oleh makhluk yang diciptakan-Nya, komunikasi atau wahyu adalah cara yang masuk akal. **Teisme tanpa wahyu** (*deisme*) menerima Tuhan yang menciptakan tapi tidak berkomunikasi — ini meninggalkan manusia tanpa petunjuk yang jelas. Agama-agama wahyu mengklaim menjawab celah ini.
+
+**Jawaban kedua** bersifat antropologis: manusia adalah makhluk sosial, ritual, dan tubuh. Keyakinan yang hanya hidup sebagai proposisi abstrak tidak mengubah cara hidup. Agama menerjemahkan keyakinan menjadi **praktik yang membentuk karakter** — ibadah harian, puasa, sedekah, zikir, doa — dan praktik-praktik ini, seperti ditunjukkan oleh psikologi moral, mengubah orang secara nyata. **William James** menyebutnya "the fruits of religion": agama yang sejati menghasilkan perubahan yang bisa diverifikasi dalam karakter dan perilaku. **Jawaban ketiga**: komunitas religius menyediakan infrastruktur moral, sosial, dan eksistensial yang tidak pernah berhasil digantikan oleh institusi sekuler secara konsisten.`,
+insight:`"Teisme tanpa agama adalah seperti diagnosa tanpa pengobatan — berguna untuk memahami kondisi, tapi tidak cukup untuk mengubah kehidupan."`,
+cite:`— William James, "The Varieties of Religious Experience", 1902; Alasdair MacIntyre, "After Virtue", 1981`},
+
+{id:29,ch:6,title:'Agama dan Kesehatan Mental: Apa yang Data Katakan',tag:'psikologi',
+body:`Terlepas dari perdebatan teologis, ada pertanyaan empiris yang bisa dijawab: apakah religiusitas berkorelasi dengan kesejahteraan manusia? Data survei skala besar menjawab ini dengan konsistensi yang mengejutkan.
+
+**Harold Koenig** (Duke University) dan tim telah menganalisis lebih dari 3.000 studi tentang hubungan agama dan kesehatan. Temuannya: religiusitas berkorelasi positif dengan tingkat depresi yang lebih rendah, kecemasan yang lebih rendah, penyalahgunaan zat yang lebih sedikit, kepuasan hidup yang lebih tinggi, harapan hidup yang lebih panjang, dan pemulihan dari penyakit yang lebih cepat. Efek ini muncul **bahkan setelah mengontrol variabel-variabel sosiologis** seperti dukungan sosial dan status ekonomi.
+
+**Temuan dari Studi Harvard** (Tyler VanderWeele, 2016): data dari 75.000+ orang selama 20 tahun menunjukkan bahwa kehadiran ibadah mingguan berkorelasi dengan 33% lebih rendah risiko kematian prematur. **Masalah kausalitas** tentu ada — korelasi bukan kausalitas. Tapi konsistensi data lintas budaya, negara, dan metodologi menunjukkan bahwa setidaknya **sesuatu dalam praktik religius** secara aktual melindungi kesejahteraan manusia. Bukan hanya komunitas sosial — karena efeknya muncul bahkan setelah mengontrol variabel komunitas.`,
+insight:`"Jika ada pil yang menghasilkan manfaat kesehatan yang setara dengan religiusitas aktif, itu akan menjadi pil paling dicari dalam sejarah farmasi. Bahwa efek yang sama dihasilkan oleh sesuatu yang tidak dapat dipatenkan adalah ironi yang menarik."`,
+cite:`— Harold Koenig, "Religion and Health", 2001; Tyler VanderWeele et al., JAMA Internal Medicine 2016`},
+
+{id:30,ch:6,title:'Agama sebagai Sistem Moral yang Teruji Waktu',tag:'filsafat-agama',
+body:`**Alasdair MacIntyre** dalam "After Virtue" (1981) berargumen bahwa proyek **Pencerahan** untuk membangun moralitas tanpa fondasi teologis telah **gagal**. Kant mencoba menurunkan moralitas dari akal murni; utilitarianisme mencoba menurunkannya dari kalkulasi kebahagiaan. MacIntyre menunjukkan bahwa keduanya bergantung pada asumsi-asumsi tersembunyi yang tidak bisa dibenarkan tanpa kerangka teleologis — dan kerangka teleologis paling koheren yang dikembangkan manusia adalah agama.
+
+Argumen MacIntyre bukan bahwa agama benar secara metafisik, tapi bahwa **tradisi moral religius** menyediakan apa yang ia sebut *practice-embedded virtues* — kebajikan yang bermakna hanya dalam konteks narasi yang lebih besar tentang siapa manusia, dari mana ia berasal, dan ke mana ia menuju. Tanpa narasi itu, "kebajikan" menjadi sekadar daftar sifat yang tidak terhubung satu sama lain.
+
+**Robert Putnam** dalam "American Grace" (2010) mendokumentasikan secara empiris bahwa orang religius di AS secara konsisten lebih aktif dalam aktivitas sipil, lebih murah hati (bahkan kepada non-religius), lebih terlibat dalam komunitas — dan efek ini berkorelasi dengan **partisipasi komunal religius**, bukan sekadar keyakinan pribadi. Agama yang dijalani dalam komunitas menghasilkan manusia yang secara statistik lebih baik sebagai warga.`,
+insight:`"Kita telah mencoba selama 200 tahun membangun masyarakat yang baik tanpa agama. Hasilnya — termasuk abad ke-20 dengan rezim ateis paling kejam yang pernah ada — tidak menghasilkan argumen yang kuat untuk optimisme sekuler."`,
+cite:`— Alasdair MacIntyre, "After Virtue", 1981; Robert Putnam, "American Grace", 2010`},
+
+{id:31,ch:6,title:'Islam, Kristen, Yahudi: Klaim Wahyu dan Ujiannya',tag:'filsafat-agama',
+body:`Monoteisme Abrahamik — Islam, Kristen, Yudaisme — tidak hanya mengklaim "ada Tuhan." Mereka mengklaim **wahyu spesifik**: Tuhan yang berbicara ke dalam sejarah melalui nabi, kitab suci, peristiwa historis yang dapat diverifikasi. Ini adalah klaim yang lebih berani — dan karenanya lebih teruji.
+
+**Al-Quran**: mengklaim wahyu langsung kepada Muhammad (632 M). Tantangan (*i'jaz*) yang diklaim: konsistensi internal, kandungan ilmiah yang diklaim melampaui pengetahuan abad ke-7, dan pelestarian tekstual yang tidak tertandingi dalam sejarah teks kuno. **Kristen**: klaim sentralnya adalah kebangkitan Yesus dari kematian — peristiwa historis yang diklaim dapat diverifikasi. **N.T. Wright**, Uskup dan sejarawan Perjanjian Baru, berargumen dalam "The Resurrection of the Son of God" (2003) bahwa kebangkitan adalah penjelasan terbaik untuk sejumlah fakta historis yang tidak diperdebatkan: makam kosong, penampakan, transformasi radikal murid-murid. **Yudaisme**: klaim Eksodus dan penyingkapan di Sinai sebagai dasar.
+
+Tidak ada ruang di sini untuk menilai klaim-klaim ini secara konklusif. Yang penting dicatat: ini adalah klaim yang **mengundang verifikasi historis dan logis** — bukan hanya kepercayaan buta. Dan komunitas ilmiah yang dengan serius memeriksa klaim-klaim ini jauh lebih terbagi daripada yang sering diasumsikan oleh orang awam.`,
+insight:`"Agama-agama wahyu tidak meminta lompatan kepercayaan ke dalam kegelapan. Mereka meminta lompatan kepercayaan ke dalam sejarah — ke dalam klaim-klaim yang bisa diperiksa, diperdebatkan, dan dievaluasi oleh akal."`,
+cite:`— N.T. Wright, "The Resurrection of the Son of God", 2003; William Lane Craig`},
+
+{id:32,ch:6,title:'Ritual, Simbolisme, dan Pembentukan Jiwa',tag:'antropologi',
+body:`**Ritual** bukan hanya perilaku berulang — ia adalah teknologi pembentukan manusia yang dikembangkan selama ribuan tahun. **Pascal Boyer** dan **Harvey Whitehouse** dalam antropologi kognitif agama mendokumentasikan bagaimana ritual religius — khususnya yang melibatkan pengulangan (*low intensity, high frequency*) seperti shalat lima waktu, doa harian, meditasi — secara neurologis membentuk ulang jaringan saraf dan kebiasaan kognitif.
+
+**Liturgi** sebagai contoh: doa berulang yang sama, dibaca ribuan kali selama seumur hidup, tidak hanya memperkuat memori teks — ia membentuk respons otomatis terhadap situasi tertentu, menanamkan pola pikir dan respons emosional yang menjadi bagian dari karakter. **James K.A. Smith** dalam "Desiring the Kingdom" (2009) berargumen bahwa manusia adalah makhluk yang dibentuk lebih oleh **praktik** (apa yang kita lakukan berulang) daripada oleh **proposisi** (apa yang kita percayai secara sadar).
+
+Ini memiliki implikasi besar: jika kamu ingin menjadi orang yang tertentu — lebih sabar, lebih berterima kasih, lebih waspada terhadap ego — maka praktik berulang yang dirancang untuk membentuk karakter itu jauh lebih efektif dari niat abstrak. Agama adalah sistem terbaik yang pernah dikembangkan manusia untuk melakukan ini secara sistematik.`,
+insight:`"Kamu adalah apa yang kamu lakukan berulang-ulang — bukan apa yang kamu percayai di kepala. Agama mengetahui ini jauh sebelum neurosains mengkonfirmasinya."`,
+cite:`— James K.A. Smith, "Desiring the Kingdom", 2009; Harvey Whitehouse, "Modes of Religiosity", 2004`},
+
+{id:33,ch:6,title:'Agama dan Koherensi Sosial: Fungsi yang Tidak Tergantikan',tag:'sosiologi',
+body:`**Émile Durkheim** — bapak sosiologi, bukan apologist religius — menemukan dalam risetnya yang monumental bahwa agama berfungsi sebagai **perekat sosial fundamental**: menciptakan rasa sakral bersama, nilai bersama, dan obligasi komunal yang memungkinkan masyarakat berfungsi secara kohesif. Tanpa sesuatu yang *suci* — yang oleh semua anggota komunitas diperlakukan sebagai melampaui negosiasi utilitarian — ikatan sosial melemah.
+
+**Robert Bellah** dalam "Habits of the Heart" (1985) mendokumentasikan bagaimana **individualisme sekuler** di Amerika menciptakan fragmentasi sosial: orang yang mendefinisikan diri sepenuhnya dari preferensi personal tidak memiliki sumber motivasi untuk berkorban bagi orang lain. Bahasa kebajikan publik yang pernah disediakan oleh agama digantikan oleh bahasa hak dan kepentingan pribadi — yang tidak bisa menghasilkan kohesi yang sama.
+
+**Jonathan Haidt** dalam "The Righteous Mind" (2012) — ateis yang jujur terhadap data — menyimpulkan bahwa komunitas religius menghasilkan "human hives" — level kerjasama dan altruisme yang melampaui apa yang diprediksi oleh model evolusi standar. Ia tidak menyimpulkan bahwa agama itu *benar*, tapi ia menyimpulkan bahwa agama melakukan sesuatu untuk manusia sosial yang **belum ditemukan pengganti sekulernya yang setara**.`,
+insight:`"Sekularisme telah mencoba selama 200 tahun menggantikan fungsi agama dengan institusi sipil. Hasilnya adalah masyarakat yang lebih bebas dalam banyak hal — tapi belum menghasilkan komunitas moral yang sekuat yang dihasilkan agama di masa terbaiknya."`,
+cite:`— Émile Durkheim, "The Elementary Forms of Religious Life", 1912; Jonathan Haidt, "The Righteous Mind", 2012`},
+
+// ══ BAB 7: KEBERATAN & JAWABAN ══
+{id:34,ch:7,title:'Keberatan Dawkins: "The God Delusion" Dievaluasi',tag:'ateisme',
+body:`**Richard Dawkins** dalam "The God Delusion" (2006) adalah kritik agama paling berpengaruh dalam era kontemporer. Argumen-argumen utamanya harus dihadapi secara jujur, tidak diabaikan.
+
+**Argumen Boeing 747**: "Siapa yang menciptakan Tuhan? Tuhan yang menciptakan alam semesta yang kompleks harus lebih kompleks dari alam semesta, dan karenanya lebih tidak mungkin ada." Respons: argumen ini tidak berlaku untuk Wujud yang keberadaannya *niscaya* (necessary being). Prinsip "sesuatu yang kompleks harus memiliki pembuat" berlaku untuk wujud kontingen yang tersusun dari bagian-bagian. Wujud yang sederhana secara ontologis (tidak tersusun, tidak berubah) tidak memerlukan pembuat. Dawkins mengasumsikan Tuhan adalah wujud kontingen yang tersusun — asumsi yang tidak diterima oleh teologi klasik manapun.
+
+**"Agama menyebabkan kejahatan"**: Dawkins mendokumentasikan kekejaman yang dilakukan atas nama agama. Ini secara historis akurat — Perang Salib, Inkuisisi, terorisme religius. Tapi **tu quoque** berlaku: abad ke-20 menghasilkan rezim ateis — Stalin, Mao, Pol Pot — yang membunuh lebih banyak orang dalam waktu lebih singkat daripada semua perang agama dalam sejarah Eropa digabung. Ini bukan argumen bahwa ateisme menyebabkan pembunuhan, melainkan bahwa "agama menyebabkan kejahatan" bukan argumen yang memvalidasi ateisme — karena manusia, dengan atau tanpa agama, mampu kekejaman.`,
+insight:`"Dawkins adalah ahli biologi yang sangat baik dan penulis sains yang luar biasa. Tapi ketika ia menulis tentang filsafat agama, ia beroperasi di luar keahliannya — dan banyak filsuf, termasuk yang ateis, mencatat ini."`,
+cite:`— Terry Eagleton, "Lunging, Flailing, Mispunching", LRB 2006; David Bentley Hart, "Atheist Delusions", 2009`},
+
+{id:35,ch:7,title:'Keberatan dari Sains: "Tuhan Mengisi Celah Kekosongan"',tag:'ateisme',
+body:`**"God of the Gaps"** adalah keberatan yang sah: sejarah menunjukkan bahwa "Tuhan" sering digunakan untuk menjelaskan fenomena yang belum dipahami, lalu ketika sains menemukannya, Tuhan disingkirkan dari penjelasan itu. Petir bukan dewa Zeus — itu listrik. Penyakit bukan kutukan — itu bakteri. Keberatan ini seharusnya membuat siapapun berhati-hati dalam menggunakan Tuhan sebagai penjelasan untuk hal-hal yang mungkin bisa dijelaskan secara naturalistik.
+
+Tapi ada keberatan penting: argumen-argumen terbaik dalam buku ini **bukan** argumen celah. Argumen kosmologis tidak mengatakan "kita tidak tahu dari mana alam semesta, jadi Tuhan." Ia mengatakan "secara prinsip, tidak bisa ada penjelasan naturalistik untuk keberadaan alam semesta karena penjelasan naturalistik adalah penjelasan dalam alam semesta." Ini adalah batas struktural, bukan celah sementara.
+
+**Fine-tuning** bukan celah — bukan "kita tidak tahu mengapa konstantanya bernilai ini." Kita tahu dengan sangat baik bahwa konstanta fisika adalah data yang tidak dijelaskan oleh hukum fisika manapun. Pertanyaannya bukan mengapa nilai itu — tapi mengapa ada presisi yang luar biasa dalam nilai-nilai itu. Ini bukan celah — ini adalah data yang membutuhkan interpretasi.`,
+insight:`"Kritik 'Tuhan celah kekosongan' menyerang teisme yang buruk — tapi tidak menyentuh teisme yang dibangun di atas argumen prinsipial, bukan atas keingintahuan sains yang belum terjawab."`,
+cite:`— Alvin Plantinga, "Where the Conflict Really Lies", 2011`},
+
+{id:36,ch:7,title:'Keberatan Neurosains: Tuhan Hanya Produk Otak?',tag:'neurosains',
+body:`**Neurosains religius** menunjukkan korelasi antara pengalaman religius dan pola aktivasi otak tertentu. Beberapa menyimpulkan: "Karena otak menghasilkan pengalaman religius, Tuhan hanyalah produk otak." Ini adalah **kesalahan logika yang serius**.
+
+Argumen ini membuktikan terlalu banyak: otak juga menghasilkan pengalaman mencintai seseorang, mengalami keindahan musik, merasakan kebenaran matematika. Jika "otak yang menghasilkan pengalaman X" berarti "X tidak nyata", maka cinta tidak nyata, keindahan tidak nyata, dan kebenaran 2+2=4 tidak nyata. Ini bukan kesimpulan yang diterima siapapun.
+
+Korelasi neural menunjukkan bahwa otak **terlibat** dalam pengalaman religius — bukan bahwa otak adalah **sumber eksklusif** dari apa yang dialami. Kamera yang merekam pemandangan indah terlibat dalam merekam pemandangan itu — tapi kamera bukan sumber keindahan pemandangan. **Andrew Newberg** sendiri, yang risetnya sering dikutip untuk "menjelaskan" agama secara naturalistik, menyatakan bahwa risetnya tidak membuktikan bahwa Tuhan tidak ada — hanya bahwa otak aktif saat orang berdoa, seperti otak aktif saat melakukan aktivitas apapun.`,
+insight:`"Menemukan mekanisme neurologis dari suatu pengalaman tidak mendiskualifikasi pengalaman itu. Bahwa cinta bisa di-scan di fMRI tidak membuat cinta menjadi tidak nyata. Standar yang sama harus berlaku untuk pengalaman religius."`,
+cite:`— Andrew Newberg, "Principles of Neurotheology", 2010`},
+
+{id:37,ch:7,title:'Masalah Sembunyi-Sembunyi Tuhan (Divine Hiddenness)',tag:'teologi',
+body:`**J.L. Schellenberg** (1993) mengembangkan argumen kuat: jika ada Tuhan yang maha baik yang menginginkan hubungan dengan manusia, maka tidak seharusnya ada orang yang dengan sungguh-sungguh mencari Tuhan namun tidak menemukan-Nya. Tapi secara empiris ada banyak orang yang dengan tulus mencari tapi tidak mengalami kehadiran Tuhan. Kesimpulan: Tuhan yang seperti itu tidak ada.
+
+Ini adalah argumen yang lebih bernuansa dari argumen kejahatan dan membutuhkan respons yang serius. Beberapa respons yang telah dikembangkan: **(1)** Kepercayaan yang didapat melalui proses pencarian, keraguan, dan pergulatan mungkin menghasilkan hubungan yang **lebih dalam** daripada keyakinan yang datang secara mudah — maka Tuhan yang maha bijak mungkin memiliki alasan untuk tidak selalu hadir secara jelas. **(2)** Apa yang dimaksud "sungguh-sungguh mencari"? Schellenberg mengasumsikan jika seseorang tidak mengalami Tuhan meski mencari, maka Tuhan tidak ada — tapi ini mengasumsikan bahwa pengalaman manusia adalah standar yang dapat diandalkan sepenuhnya. **(3)** **Paul Moser** berargumen bahwa "mencari Tuhan" yang benar bukan hanya intelektual tapi melibatkan orientasi kehendak — bukan hanya "beri aku bukti" tapi "aku siap untuk berubah jika kamu nyata".
+
+Pertanyaan Schellenberg tidak memiliki jawaban mudah — tapi ia tidak menjadi argumen konklusif melawan teisme jika ada penjelasan alternatif yang masuk akal.`,
+insight:`"Tersembunyi bukan berarti tidak ada. Beberapa hal paling nyata dalam kehidupan manusia — kepercayaan, karakter, kedalaman jiwa — tidak datang tanpa pergulatan aktif untuk menemukannya."`,
+cite:`— J.L. Schellenberg, "Divine Hiddenness and Human Reason", 1993; Paul Moser, "The Evidence for God", 2009`},
+
+{id:38,ch:7,title:'Agama sebagai Racun Sosial? Evaluasi Jujur Hitchens',tag:'ateisme',
+body:`**Christopher Hitchens** dalam "God is Not Great: How Religion Poisons Everything" (2007) adalah kritik religius paling tajam dan paling literari dari era kontemporer. Ia mendokumentasikan kekejaman bersejarah atas nama agama dengan keterampilan retoris yang luar biasa.
+
+Apa yang benar dari Hitchens: agama **telah** digunakan sebagai justifikasi untuk penindasan, kekerasan, dan penyiksaan. Ini adalah fakta historis yang tidak bisa dan tidak harus disangkal. Hierarki religius telah berulang kali menyalahgunakan kekuasaan. Agama sebagai institusi memiliki rekam jejak yang campuran — seperti semua institusi manusia.
+
+Apa yang berlebihan dari Hitchens: ia menulis seolah kekejaman adalah **produk** agama, bukan produk manusia yang memanipulasi agama. Tapi institusi sekuler — negara, ideologi politik, bahkan sains (*eugenika*) — memiliki rekam jejak kekejaman yang sama atau lebih buruk. Kekejaman adalah produk manusia yang berkuasa tanpa akuntabilitas yang memadai — bukan produk agama per se.
+
+Yang paling penting: Hitchens mendokumentasikan institusi agama yang korup, bukan mengevaluasi klaim kebenaran agama. Bahwa gereja tertentu melakukan kejahatan tidak membuat Tuhan tidak ada — sama seperti korupsi dalam institusi sains tidak membuat penisilin tidak bekerja.`,
+insight:`"Hitchens adalah polemis yang brilian. Tapi polemik yang brilian dan evaluasi filosofis yang ketat adalah dua hal yang berbeda — dan Hitchens sendiri, di saat-saat terbaiknya, mengakui perbedaan itu."`,
+cite:`— Christopher Hitchens, "God is Not Great", 2007; dinilai oleh David Berlinski, "The Devil's Delusion", 2008`},
+
+// ══ BAB 8: SINTESIS ══
+{id:39,ch:8,title:'Epistemologi: Apa yang Bisa Kita Ketahui tentang Tuhan?',tag:'epistemologi',
+body:`Sepanjang buku ini kita bergerak di wilayah epistemologi — teori pengetahuan. Sebelum menarik kesimpulan, penting untuk menjernihkan: **apa standar pengetahuan yang kita gunakan?**
+
+Dalam sains, pengetahuan empiris dibangun dari observasi, hipotesis, prediksi, dan falsifikasi. Standar ini sangat kuat untuk pernyataan tentang **apa yang terjadi di dalam alam semesta**. Tapi pertanyaan tentang keberadaan Tuhan adalah pertanyaan tentang **sumber dari alam semesta** — dan metodologi empiris tidak dirancang untuk menjawab pertanyaan itu.
+
+**Reformed epistemology** (Plantinga, **Nicholas Wolterstorff**): kepercayaan kepada Tuhan bisa menjadi **properly basic belief** — keyakinan yang tidak membutuhkan pembuktian lebih lanjut, seperti kepercayaan bahwa masa lalu itu nyata atau bahwa pikiran orang lain ada. Kita tidak membuktikan masa lalu secara empiris — kita menerimanya sebagai dasar kognitif yang wajar. Kepercayaan pada Tuhan, dalam kondisi tertentu (pengalaman religius yang genuine, misalnya), bisa memiliki status epistemik yang sama.
+
+**William P. Alston** dalam "Perceiving God" (1991) berargumen bahwa *persepsi Tuhan* memiliki struktur epistemik yang sama dengan persepsi sensorik — dan kita tidak bisa menolak yang satu tanpa standar yang juga menolak yang lain. Ini bukan argumen bahwa "percaya saja tanpa bukti" — ini adalah argumen tentang di mana **beban pembuktian** seharusnya diletakkan.`,
+insight:`"Ateis yang menuntut bukti empiris untuk Tuhan menggunakan metodologi yang tidak kompatibel dengan pertanyaan yang diajukan — seperti menggunakan termometer untuk mengukur keindahan musik. Alat yang salah bukan berarti tidak ada yang diukur."`,
+cite:`— William P. Alston, "Perceiving God", 1991; Plantinga, "Warranted Christian Belief", 2000`},
+
+{id:40,ch:8,title:'Probabilitas Kumulatif: Argumen Mana yang Paling Bertahan',tag:'sintesis',
+body:`Tidak ada satu argumen dalam buku ini yang berdiri sebagai **bukti konklusif** untuk keberadaan Tuhan. Ini perlu dinyatakan dengan jelas — dan dengan jujur. Setiap argumen memiliki keberatan yang serius, dan keberatan-keberatan itu tidak semuanya terjawab secara memuaskan.
+
+Tapi itulah cara kerja **argumen kumulatif** (*cumulative case*), yang dipopulerkan oleh **Basil Mitchell** (1973) dan dikembangkan oleh **Richard Swinburne** dalam "The Existence of God" (1979/2004). Masing-masing argumen menambahkan probabilitas kepada hipotesis teistik, meski tidak satu pun yang conclusive sendiri. Seperti investigasi kriminal: tidak ada satu bukti tunggal yang membuktikan siapa pembunuhnya, tapi akumulasi bukti yang konsisten satu arah menghasilkan kesimpulan yang reasonable.
+
+Swinburne memformalkan ini dengan **calculus Bayesian**: probabilitas posterior Tuhan, setelah mempertimbangkan semua evidens — kosmologi, fine-tuning, kesadaran, moralitas, pengalaman religius universal — adalah **lebih tinggi** dari probabilitas sebaliknya, jika kita tidak memasukkan prasangka sebelumnya. Ini bukan bukti — ini adalah pertimbangan probabilistik yang jujur. Dan **falsifikasi tidak simetris**: kita tidak bisa membuktikan Tuhan tidak ada dengan cara yang sama seperti kita tidak bisa membuktikan cinta tidak ada.`,
+insight:`"Dalam kehidupan nyata, kita jarang memiliki bukti konklusif untuk keputusan terpenting kita. Pernikahan, karir, kepercayaan — semuanya dibuat berdasarkan probabilitas terbaik yang tersedia, bukan kepastian. Kenapa standar berbeda diterapkan untuk pertanyaan tentang Tuhan?"`,
+cite:`— Richard Swinburne, "The Existence of God", 2nd ed. 2004; Basil Mitchell, "The Justification of Religious Belief", 1973`},
+
+{id:41,ch:8,title:'Dari Argumen ke Komitmen: Mengapa Intelektual Tidak Cukup',tag:'sintesis',
+body:`Seseorang bisa menerima semua argumen dalam buku ini secara intelektual dan tetap tidak beragama. **Blaise Pascal** sudah mengidentifikasi ini: Tuhan bukan hanya objek spekulasi filosofis, tapi **subjek relasi**. Hubungan dengan Tuhan bukan seperti menerima teori fisika — ia melibatkan kehendak, perubahan hidup, penyerahan.
+
+Ini bukan argumen bahwa "kalau kamu tidak mau komit, kamu tidak bisa percaya." Ini adalah deskripsi tentang sifat objek yang sedang kita bicarakan. Jika Tuhan adalah Person — bukan prinsip abstrak — maka mengenalnya membutuhkan **orientasi seluruh diri**, bukan hanya kepala.
+
+**William James** dalam "The Will to Believe" (1897) berargumen bahwa beberapa pertanyaan adalah *genuine options* — mereka tidak bisa dijawab dari posisi netral yang aman. Menangguhkan penilaian secara permanen *adalah* pilihan yang memiliki konsekuensi. Seperti seseorang yang menolak memutuskan apakah akan menikah sampai dia *yakin* pasangannya sempurna — penantian itu sendiri adalah keputusan dengan konsekuensinya.
+
+**Pascal's Wager** (1670) adalah versi terkenal dari argumen ini — meski sering diserang, logika dasarnya bertahan: jika Tuhan ada dan kamu tidak beragama, kerugiannya tidak terbatas. Jika Tuhan tidak ada dan kamu beragama, kerugiannya terbatas. Asimetri ini, *ceteris paribus*, memfavoritkan komitmen religius.`,
+insight:`"Akal bisa membawa kamu ke pintu. Tapi pintu tidak dibuka oleh akal — ia dibuka oleh kehendak. Dan itu, pada akhirnya, adalah keputusan yang tidak bisa dibuat oleh buku ini untukmu."`,
+cite:`— Blaise Pascal, "Pensées", 1670; William James, "The Will to Believe", 1897`},
+
+{id:42,ch:8,title:'Kesimpulan: Apa yang Pikiran Jujur Harus Akui',tag:'sintesis',
+body:`Setelah 42 argumen — dari metafisika hingga neurosains, dari kosmologi hingga sosiologi — apa yang bisa disimpulkan dengan jujur?
+
+**Apa yang terbukti**: (1) Keberadaan alam semesta tidak bisa dijelaskan dari dalam alam semesta sendiri — ada batas struktural untuk penjelasan naturalistik. (2) Fine-tuning konstanta fisika adalah fakta yang belum memiliki penjelasan naturalistik yang memuaskan. (3) Moralitas objektif yang dirasakan manusia secara universal tidak memiliki fondasi yang stabil dalam materialisme murni. (4) Religiusitas universal manusia adalah data empiris yang membutuhkan penjelasan serius. (5) Komunitas religius secara konsisten menghasilkan manfaat yang belum tergantikan oleh institusi sekuler.
+
+**Apa yang tidak terbukti**: Keberadaan Tuhan tidak terbukti dengan kepastian matematis. Kebenaran agama spesifik tertentu tidak terbukti dari argumen-argumen di sini. Masalah kejahatan, divine hiddenness, dan keberatan neurosains tidak terjawab sepenuhnya.
+
+**Kesimpulan yang defensible**: **Teisme rasional** — kepercayaan pada Tuhan yang didasarkan pada argumen yang dipertimbangkan secara matang — adalah posisi yang **lebih mudah dipertahankan secara intelektual** daripada yang sering diasumsikan. Sebaliknya, **ateisme dogmatik** — keyakinan yang tidak perlu bahwa Tuhan pasti tidak ada — adalah posisi yang membutuhkan lebih banyak pembenaran dari yang sering diberikan. **Agnostisisme** yang membuka diri terhadap argumen adalah posisi yang jujur — tapi ketidakputusan yang permanen, seperti dikemukakan William James, bukanlah netralitas. Ia adalah keputusan yang punya biaya tersendiri.`,
+insight:`"Filsafat yang jujur tidak memberikan kepastian tentang pertanyaan terbesar. Yang ia berikan adalah kejelasan tentang di mana kita berdiri, apa yang kita asumsikan, dan apa konsekuensi dari pilihan-pilihan kita. Dan itu sendiri sudah sangat berharga."`,
+cite:`— Bertrand Russell vs. Frederick Copleston, BBC Debate, 1948; Antony Flew, "There Is a God", 2007`},
+];
+
+// ── STATE ──
+function loadSt(k,fb){try{const v=localStorage.getItem(k);return v?JSON.parse(v):fb;}catch(e){return fb;}}
+const S={
+  read:     loadSt('tuhan_r',[]),
+  bm:       loadSt('tuhan_bm',[]),
+  theme:    localStorage.getItem('tuhan_t')||'dark',
+  fs:       localStorage.getItem('tuhan_fs')||'md',
+  filter:   {q:'',ch:0,tag:'',bm:false},
+  modal:    null,
+  fids:     [],
+};
+function save(){try{localStorage.setItem('tuhan_r',JSON.stringify(S.read));localStorage.setItem('tuhan_bm',JSON.stringify(S.bm));}catch(e){showToast('⚠ Gagal menyimpan');}}
+
+function init(){
+  document.documentElement.setAttribute('data-theme',S.theme);
+  document.getElementById('theme-btn').textContent=S.theme==='dark'?'☀':'☾';
+  applyFS(S.fs||'md');
+  buildSB();render();
+  const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');ro.unobserve(e.target);}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+  document.addEventListener('keydown',onKey);
+  // Scroll progress bar + back to top
+  const _pb=document.getElementById('prog-bar');
+  const _ft=document.getElementById('fab-top');
+  window.addEventListener('scroll',function(){
+    const st=window.scrollY;
+    const dh=document.documentElement.scrollHeight-window.innerHeight;
+    if(_pb&&dh>0)_pb.style.transform='scaleX('+(st/dh)+')';
+    if(_ft){const show=st>400;_ft.style.opacity=show?'1':'0';_ft.style.transform=show?'translateY(0)':'translateY(12px)';_ft.style.pointerEvents=show?'auto':'none';}
+  },{passive:true});
+  document.addEventListener('click',e=>{
+    const sb=document.getElementById('sidebar'),t=document.getElementById('sb-toggle');
+    if(window.innerWidth<=900&&sb.classList.contains('open')&&!sb.contains(e.target)&&!t.contains(e.target))toggleSB();
+  });
+}
+function buildSB(){
+  const el=document.getElementById('sb-chs');el.innerHTML='';
+  const addBtn=(label,isAll,ch)=>{
+    const b=document.createElement('button');
+    b.className='ch-btn'+((isAll?S.filter.ch===0:S.filter.ch===ch.id)?' active':'');
+    if(isAll)b.innerHTML=`<span class="ch-dot" style="background:#555"></span>Semua<span class="ch-n">42</span>`;
+    else b.innerHTML=`<span class="ch-dot" style="background:${ch.color}"></span>${ch.emoji} ${ch.label}<span class="ch-n">${KD.filter(k=>k.ch===ch.id).length}</span>`;
+    b.onclick=()=>{S.filter.ch=isAll?0:ch.id;S.filter.tag='';render();buildSB();};
+    el.appendChild(b);
+  };
+  addBtn(null,true,null);
+  CHAPTERS.forEach(ch=>addBtn(null,false,ch));
+  const tags=[...new Set(KD.map(k=>k.tag))].sort();
+  const te=document.getElementById('sb-tags');te.innerHTML='';
+  tags.forEach(t=>{
+    const b=document.createElement('button');
+    b.className='tag-btn'+(S.filter.tag===t?' active':'');
+    b.textContent=t;
+    b.onclick=()=>{S.filter.tag=(S.filter.tag===t?'':t);S.filter.ch=0;render();buildSB();};
+    te.appendChild(b);
+  });
+  updateP();
+}
+function updateP(){
+  const n=S.read.length,pct=Math.round(n/42*100);
+  document.getElementById('sb-rc').textContent=`${n} / 42`;
+  document.getElementById('sb-pct').textContent=pct+'%';
+  document.getElementById('sb-fill').style.width=pct+'%';
+  document.getElementById('sb-tr').textContent=n;
+  document.getElementById('sb-bmc').textContent=S.bm.length;
+}
+function render(){
+  const{q,ch,tag,bm}=S.filter;
+  const qq=q.toLowerCase().trim();
+  const flt=qq||ch||tag||bm;
+  ['hero','pengantar','penutup'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display=flt?'none':'';});
+  const ft=document.querySelector('footer');if(ft)ft.style.display=flt?'none':'';
+  const filtered=KD.filter(k=>{
+    if(bm&&!S.bm.includes(k.id))return false;
+    if(ch&&k.ch!==ch)return false;
+    if(tag&&k.tag!==tag)return false;
+    if(qq&&!(k.title+k.body+k.tag+k.insight).toLowerCase().includes(qq))return false;
+    return true;
+  });
+  S.fids=filtered.map(k=>k.id);
+  const area=document.getElementById('content-area');
+  const empty=document.getElementById('empty');
+  area.innerHTML='';
+  empty.style.display=filtered.length===0?'block':'none';
+  if(!filtered.length)return;
+  const groups={};
+  filtered.forEach(k=>{if(!groups[k.ch])groups[k.ch]=[];groups[k.ch].push(k);});
+  Object.keys(groups).forEach(cid=>{
+    const c=CHAPTERS.find(x=>x.id===parseInt(cid));if(!c)return;
+    if(!qq&&!tag&&!bm){
+      const h=document.createElement('div');
+      h.className='ch-hdr reveal';h.setAttribute('data-num',c.id);
+      h.innerHTML=`<div class="ch-eyebrow" style="color:${c.color}">Bab ${c.id} · ${c.emoji}</div><div class="ch-name" style="color:${c.color}">${c.label}</div><div class="ch-tagline">${c.tagline}</div>`;
+      area.appendChild(h);
+    }
+    const grid=document.createElement('div');grid.className='cards-grid';
+    groups[cid].forEach(k=>{
+      const cv=CHAPTERS.find(x=>x.id===k.ch);
+      const card=document.createElement('div');
+      const isB=S.bm.includes(k.id);
+      card.className='card reveal'+(S.read.includes(k.id)?' read':'');
+      card.style.setProperty('--ch-color',cv.color);
+      card.setAttribute('data-id',k.id);
+      const prev=k.body.replace(/\*\*/g,'').split('\n')[0].slice(0,200);
+      card.innerHTML=`<div class="card-argtype">№ ${String(k.id).padStart(2,'0')} · ${cv.emoji} ${cv.label}</div>
+        <div class="card-title">${k.title}</div>
+        <div class="card-preview">${prev}</div>
+        <div class="card-footer">
+          <span class="card-tag">${k.tag}</span>
+          <div class="card-acts">
+            <button class="ci-btn${isB?' bm-on':''}" onclick="event.stopPropagation();toggleBM(${k.id})" title="${isB?'Hapus bookmark':'Bookmark'}" aria-label="${isB?'Hapus bookmark':'Tambah bookmark'}" aria-pressed="${isB}">${isB?'🔖':'☆'}</button>
+            <button class="ci-btn" onclick="event.stopPropagation();shareCard(${k.id})" title="Salin kutipan" aria-label="Salin kutipan">⎘</button>
+          </div>
+        </div>`;
+      card.onclick=()=>openMO(k.id);
+      grid.appendChild(card);
+    });
+    area.appendChild(grid);
+  });
+  const ro2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');ro2.unobserve(e.target);}}),{threshold:.08});
+  area.querySelectorAll('.reveal').forEach(el=>ro2.observe(el));
+  updateP();
+}
+
+// ── MODAL ──
+let _ftH=null;
+function openMO(id){
+  const k=KD.find(x=>x.id===id);if(!k)return;
+  const c=CHAPTERS.find(x=>x.id===k.ch);
+  S.modal=id;
+  document.getElementById('md').style.setProperty('--modal-color',c.color);
+  document.getElementById('md-num').textContent=`№ ${String(k.id).padStart(2,'0')} · ${c.emoji} ${c.label}`;
+  document.getElementById('md-title').textContent=k.title;
+  const ps=k.body.split('\n').filter(p=>p.trim());
+  document.getElementById('md-body').innerHTML=
+    ps.map(p=>`<p>${p.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*([^*]+)\*/g,'<em>$1</em>')}</p>`).join('')+
+    `<div class="md-divider"></div><div class="md-insight">${k.insight}<cite>${k.cite||''}</cite></div>`;
+  document.getElementById('md-tag').textContent=k.tag;
+  const isB=S.bm.includes(id);
+  const mb=document.getElementById('md-bm');
+  mb.className='md-act-btn'+(isB?' active':'');
+  mb.textContent=isB?'🔖 Tersimpan':'☆ Simpan';
+  const ids=S.fids.length?S.fids:KD.map(k=>k.id);
+  const idx=ids.indexOf(id);
+  document.getElementById('md-prev').disabled=idx<=0;
+  document.getElementById('md-next').disabled=idx>=ids.length-1;
+  const ov=document.getElementById('mo');
+  ov.classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>document.getElementById('md').querySelector('.md-close')?.focus(),60);
+  if(_ftH)document.removeEventListener('keydown',_ftH);
+  _ftH=e=>{if(e.key!=='Tab')return;const f=document.getElementById('md').querySelectorAll('button:not(:disabled)');const first=f[0],last=f[f.length-1];if(e.shiftKey){if(document.activeElement===first){e.preventDefault();last.focus();}}else{if(document.activeElement===last){e.preventDefault();first.focus();}}};
+  document.addEventListener('keydown',_ftH);
+  if(!S.read.includes(id)){S.read.push(id);save();updateP();const card=document.querySelector(`.card[data-id="${id}"]`);if(card)card.classList.add('read');}
+}
+function closeMO(){
+  document.getElementById('mo').classList.remove('open');
+  document.body.style.overflow='';S.modal=null;
+  if(_ftH){document.removeEventListener('keydown',_ftH);_ftH=null;}
+}
+function closeMOBg(e){if(e.target===document.getElementById('mo'))closeMO();}
+function navMO(d){
+  if(!S.modal)return;
+  const ids=S.fids.length?S.fids:KD.map(k=>k.id);
+  const n=ids[ids.indexOf(S.modal)+d];
+  if(n!==undefined)openMO(n);
+}
+function toggleMdBM(){
+  if(!S.modal)return;toggleBM(S.modal);
+  const isB=S.bm.includes(S.modal);
+  const mb=document.getElementById('md-bm');
+  mb.className='md-act-btn'+(isB?' active':'');
+  mb.textContent=isB?'🔖 Tersimpan':'☆ Simpan';
+}
+function shareItem(){if(S.modal)shareCard(S.modal);}
+
+function toggleBM(id){
+  if(S.bm.includes(id))S.bm.splice(S.bm.indexOf(id),1);else S.bm.push(id);
+  save();updateP();
+  const isB=S.bm.includes(id);
+  const card=document.querySelector(`.card[data-id="${id}"]`);
+  if(card){
+    card.classList.toggle('bm-on',isB);
+    const btn=card.querySelector('.ci-btn');
+    if(btn){btn.textContent=isB?'🔖':'☆';btn.classList.toggle('bm-on',isB);btn.setAttribute('aria-pressed',String(isB));}
+  }
+  showToast(isB?'🔖 Ditambahkan ke bookmark':'Bookmark dihapus');
+}
+function shareCard(id){
+  const k=KD.find(x=>x.id===id);if(!k)return;
+  const text=`"${k.insight}"\n\n${k.cite||''}\n\n— dari 'Tuhan, Ada & Harus Ada' oleh munnnn666`;
+  if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>showToast('✓ Disalin')).catch(()=>fbCopy(text));}
+  else fbCopy(text);
+}
+function fbCopy(t){const ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('✓ Disalin');}catch(e){showToast('⚠ Salin manual');}document.body.removeChild(ta);}
+
+let _st;
+function onSearch(v){clearTimeout(_st);_st=setTimeout(()=>{S.filter.q=v;S.filter.ch=0;S.filter.tag='';render();},150);}
+function openRandom(){const pool=KD.filter(k=>!S.read.includes(k.id));const src=pool.length?pool:KD;openMO(src[Math.floor(Math.random()*src.length)].id);}
+function filterBM(){S.filter.bm=!S.filter.bm;const b=document.getElementById('bm-btn');b.style.color=S.filter.bm?'var(--gold2)':'';b.setAttribute('aria-pressed',String(S.filter.bm));render();}
+function resetFilter(){S.filter={q:'',ch:0,tag:'',bm:false};document.getElementById('search-input').value='';document.getElementById('bm-btn').style.color='';document.getElementById('bm-btn').setAttribute('aria-pressed','false');buildSB();render();}
+function toggleTheme(){S.theme=S.theme==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',S.theme);document.getElementById('theme-btn').textContent=S.theme==='dark'?'☀':'☾';localStorage.setItem('tuhan_t',S.theme);}
+function setFont(f){
+  S.fs=f;
+  const sizes={sm:'13px',md:'16px',lg:'19px'};
+  document.documentElement.style.fontSize=sizes[f]||'16px';
+  document.querySelectorAll('.fs-btn').forEach(b=>b.classList.remove('active-fs'));
+  const btn=document.getElementById('fs-'+f);if(btn)btn.classList.add('active-fs');
+  localStorage.setItem('tuhan_fs',f);
+  showToast('Teks: '+{sm:'Kecil',md:'Normal',lg:'Besar'}[f]);
+}
+function applyFS(f){setFont(f);}
+function toggleSB(){const sb=document.getElementById('sidebar'),t=document.getElementById('sb-toggle');const o=sb.classList.toggle('open');t.setAttribute('aria-expanded',String(o));}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2400);}
+function confirmReset(){const m=document.getElementById('reset-modal');m.style.display='flex';setTimeout(()=>m.querySelector('button')?.focus(),50);}
+function doReset(){S.read=[];S.bm=[];try{localStorage.removeItem('tuhan_r');localStorage.removeItem('tuhan_bm');}catch(e){}document.getElementById('reset-modal').style.display='none';buildSB();render();showToast('✓ Progres direset');}
+function onKey(e){
+  if(e.key==='Escape'){if(document.getElementById('reset-modal').style.display==='flex'){document.getElementById('reset-modal').style.display='none';return;}closeMO();}
+  if(e.key==='ArrowLeft'&&S.modal)navMO(-1);
+  if(e.key==='ArrowRight'&&S.modal)navMO(1);
+}
+init();
+</script>
+</body>
+</html>
